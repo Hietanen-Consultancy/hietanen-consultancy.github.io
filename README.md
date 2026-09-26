@@ -1,7 +1,7 @@
 # Hietanen Consultancy — company site
 
 The company website: who we are, how we work, the open source we maintain,
-reference projects, customers, and detail pages for our two products, [Fuuga](https://bitbucket.org/Thorium/fuuga) and
+reference projects, customers, and detail pages for our two products, [Fuuga](https://www.nuget.org/packages/Fuuga) and
 [FSharp.Azure.Quantum](https://github.com/Thorium/FSharp.Azure.Quantum).
 
 The whole site is static HTML prerendered at build time and published to
@@ -73,8 +73,9 @@ The pages are data-driven; most edits are to these files, not to the routes.
 
 Repository preview cards use each repository's GitHub social-preview image,
 resolved at build time by `scripts/fetch-social-images.ts` (the weekly CI run
-keeps them current). Fuuga and Prismatic live on Bitbucket and use their logos
-from the repositories instead.
+keeps them current). Fuuga and Prismatic live on Bitbucket, whose pages show a
+file listing before the README, so their cards link to the NuGet package pages
+instead and use the logos from the repositories.
 
 ## Machine readability
 

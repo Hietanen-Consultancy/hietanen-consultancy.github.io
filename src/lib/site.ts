@@ -190,7 +190,7 @@ export const repositoriesJsonLd = () =>
         "@type": "SoftwareSourceCode",
         name: repository.name,
         description: repository.detail,
-        codeRepository: repository.href,
+        codeRepository: repository.source ?? repository.href,
         url: repository.deepDive ? pageUrl(repository.deepDive.to) : repository.href,
         [roleProperty[repository.role ?? "author"]]: organizationRef(),
       },

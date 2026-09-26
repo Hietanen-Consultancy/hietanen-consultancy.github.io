@@ -10,6 +10,10 @@ import type { LinkOptions } from "@tanstack/react-router";
  *   free of asset imports.
  * - `deepDive` points at an in-site route; only repositories with a deep-dive
  *   page can be listed under `showcase.deepDives`.
+ * - `href` is where a visitor lands. Fuuga and Prismatic are hosted on Bitbucket,
+ *   which shows a file listing before the README, so they land on their NuGet
+ *   package page instead and `source` keeps the git repository for machine
+ *   metadata (schema.org `codeRepository`, the llms.txt "Source" line).
  * - `role` is Hietanen's relationship to the project; it is shown on the card
  *   so maintained-but-not-originated work is never presented as authorship.
  *   Omitted means "author". Always link the canonical repository, not a fork:
@@ -21,6 +25,8 @@ export type Repository = {
   name: string;
   detail: string;
   href: string;
+  /** The git repository when `href` is not it (see the note above). */
+  source?: string;
   role?: RepositoryRole;
   /** A `<Link to>` target; the router is `trailingSlash: "always"`, so it ends with one. */
   deepDive?: { to: NonNullable<LinkOptions["to"]>; detail: string };
@@ -47,7 +53,8 @@ export const repositories = {
   fuuga: {
     name: "Fuuga",
     detail: "A complete LLM training and serving stack in F# and .NET, no Python",
-    href: "https://bitbucket.org/Thorium/fuuga",
+    href: "https://www.nuget.org/packages/Fuuga",
+    source: "https://bitbucket.org/Thorium/fuuga",
     deepDive: {
       to: "/projects/fuuga/",
       detail: "Train, fine-tune and serve your own language models on .NET",
@@ -85,7 +92,8 @@ export const repositories = {
   prismatic: {
     name: "Prismatic",
     detail: "Multi-agent AI development workspace",
-    href: "https://bitbucket.org/thorium/prismatic",
+    href: "https://www.nuget.org/packages/Prismatic",
+    source: "https://bitbucket.org/thorium/prismatic",
   },
   funStripeSample: {
     name: "FunStripe.Sample",

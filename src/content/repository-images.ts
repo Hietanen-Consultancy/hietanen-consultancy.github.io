@@ -9,7 +9,7 @@ import socialImages from "./social-images.json" with { type: "json" };
 
 /**
  * Hand-picked preview images for repositories whose host has no usable social
- * preview (Bitbucket), or whose only preview is GitHub's generated card. That
+ * preview (NuGet, Bitbucket), or whose only preview is GitHub's generated card. That
  * card is rendered on demand and rate-limited: an uncached one answers HTTP 429
  * and shows as a broken image, so it is pinned here as a local copy instead.
  * Drop the file in `src/assets/` and import it here.

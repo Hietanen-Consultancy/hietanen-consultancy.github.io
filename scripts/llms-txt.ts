@@ -75,8 +75,10 @@ p(company.terms);
 
 h(2, "Products");
 for (const id of deepDives) {
-  const repo = repositories[id];
-  li(`**${repo.name}** — ${repo.detail}. Page: ${pageUrl(repo.deepDive.to)}. Source: ${repo.href}`);
+  const repo = repositories[id] as Repository & { deepDive: NonNullable<Repository["deepDive"]> };
+  li(
+    `**${repo.name}** — ${repo.detail}. Page: ${pageUrl(repo.deepDive.to)}. Source: ${repo.source ?? repo.href}`,
+  );
 }
 
 h(2, "How the products are sold");

@@ -2,7 +2,6 @@ import { Link, createFileRoute } from "@tanstack/react-router";
 import { ArrowLeft, ExternalLink, Terminal } from "lucide-react";
 
 import fuugaImage from "@/assets/fuuga-llm.jpg";
-import { BitbucketIcon } from "@/components/brand-icons";
 import { Button } from "@/components/ui/button";
 import { company, products } from "@/content/company";
 import { seoHead, softwareJsonLd } from "@/lib/site";
@@ -53,6 +52,8 @@ const commercialTerms = [
 
 const summary =
   "Fuuga is a complete language-model pipeline in F# and .NET: train, fine-tune, compress and serve your own models with no Python and no data leaving the building.";
+// The git repository, for machine metadata only: visitors are sent to NuGet,
+// because Bitbucket shows the file listing before the README.
 const repoUrl = "https://bitbucket.org/Thorium/fuuga";
 const nugetUrl = "https://www.nuget.org/packages/Fuuga";
 const contactUrl = `${company.contact}?subject=${encodeURIComponent("Fuuga investor deck")}`;
@@ -184,11 +185,6 @@ function FuugaPage() {
             <Button asChild size="sm" variant="outline">
               <a href={nugetUrl} target="_blank" rel="noreferrer">
                 NuGet <ExternalLink className="size-4" />
-              </a>
-            </Button>
-            <Button asChild size="sm" variant="outline">
-              <a href={repoUrl} target="_blank" rel="noreferrer">
-                <BitbucketIcon className="size-4" /> Bitbucket
               </a>
             </Button>
           </div>
@@ -416,8 +412,8 @@ function FuugaPage() {
                 variant="outline"
                 className="border-[#0c0a1c] bg-transparent font-mono text-[#0c0a1c] hover:bg-[#c4b5fd] hover:text-[#0c0a1c]"
               >
-                <a href={repoUrl} target="_blank" rel="noreferrer">
-                  Read the source <ExternalLink className="size-4" />
+                <a href={nugetUrl} target="_blank" rel="noreferrer">
+                  Get it from NuGet <ExternalLink className="size-4" />
                 </a>
               </Button>
             </div>
