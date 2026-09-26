@@ -1,0 +1,37 @@
+<section id="assumptions" data-transition="fade" style="background:#0b2a4d; color:#f0f9ff; font-family:Rubik, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:18px">
+  <p style="font-family:'Fira Code', 'Courier New', monospace; font-size:24px; letter-spacing:4px; text-transform:uppercase; color:#38bdf8">Assumptions and risks</p>
+  <h2 style="font-size:72px; font-weight:600; line-height:1.1; letter-spacing:-1px">The drivers behind the numbers, and what could break them.</h2>
+  <div style="display:flex; gap:32px">
+    <div style="flex:1; display:flex; flex-direction:column; gap:14px; background:#061a33; padding:22px; border:1px solid #1e4976; border-radius:16px">
+      <h3 style="font-size:30px; font-weight:600; line-height:1.2">Drivers</h3>
+      <ul style="font-size:24px; line-height:1.45; color:#bae6fd; padding:0 0 0 30px">
+        <li>Embedded SDK licence ACV [£40k] per vendor, 90% retention, four to six signed by year two</li>
+        <li>Planning API [£6k] a month per active operator by year two, most of it through a vendor's product</li>
+        <li>Integration or pilot [£150k] fixed scope, twelve weeks; half convert to a licence or to usage</li>
+        <li>Quota-carrying sellers from month [7] at [5] closes a year each — one in year one, [3] by year three to reach twenty-five</li>
+        <li>Fully loaded engineer cost [£110k] a year; no field-operations headcount</li>
+      </ul>
+      <p style="font-size:22px; line-height:1.4; color:#7dd3fc">Bracketed figures are the working scenario, not evidenced prices. The first vendor conversation closes them.</p>
+    </div>
+    <div style="flex:1; display:flex; flex-direction:column; gap:14px; background:#061a33; padding:22px; border:1px solid #1e4976; border-radius:16px">
+      <h3 style="font-size:30px; font-weight:600; line-height:1.2">Risks and how we answer them</h3>
+      <ul style="font-size:24px; line-height:1.45; color:#bae6fd; padding:0 0 0 30px">
+        <li><b>The fleets are still small.</b> Which is why we sell to the vendors building for them. Better routing pays at one pilot per aircraft; the ratio is upside, not the thesis.</li>
+        <li><b>Quantum advantage arrives later than hoped.</b> The hybrid planner earns revenue on classical hardware today; quantum is the upgrade, not the product.</li>
+        <li><b>Classical optimisers stay better for years.</b> Customers benefit either way through one API, and we publish the comparison ourselves.</li>
+        <li><b>Liability for a flight.</b> We are a planning tool, not a flight-control system. Every mission is accepted by the customer's pilot-in-command. Professional indemnity, not aviation cover.</li>
+      </ul>
+    </div>
+  </div>
+  <p style="position:absolute; left:128px; bottom:64px; width:1664px; font-family:'Fira Code', 'Courier New', monospace; font-size:24px; color:#bae6fd">Hietanen Consultancy · FSharp.Azure.Quantum · 18</p>
+  <aside>The first risk is the one a robotics investor raises; the second is the one a quantum investor raises. Both answers are structural: the business works if the swarms are late, and it works if quantum advantage never arrives.
+
+Detail
+— The dependency is a vendor integrating, not a regulatory change. The permission this relies on already exists.
+
+Common questions
+— "What about dual use?" Civil applications first, counsel engaged, and a written policy before the first defence enquiry.
+— "What is the sales cycle?" Six months for a vendor, four for an operator, nine for agencies through integrators. QPU time passes through at cost plus 20% until volume discounts apply.
+— "What if a hardware vendor changes its API or pricing?" Five backends behind one interface; no customer code depends on a vendor.
+— "What if the library is forked?" The hosted planner, the integrations and the fleet data are the product; the library is the funnel.</aside>
+</section>

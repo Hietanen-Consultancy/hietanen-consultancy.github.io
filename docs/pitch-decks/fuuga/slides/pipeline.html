@@ -1,0 +1,38 @@
+<section id="pipeline" data-transition="fade" style="background:#120f2a; color:#f1eefc; font-family:'IBM Plex Sans', Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:32px">
+  <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; letter-spacing:4px; text-transform:uppercase; color:#a78bfa">How it works</p>
+  <h2 style="font-size:72px; font-weight:600; line-height:1.1; letter-spacing:-1px">Start from an open model. Make it yours. Keep it in-house.</h2>
+  <div style="display:flex; gap:20px; align-items:stretch">
+    <div style="flex:1; display:flex; flex-direction:column; gap:16px; background:#0c0a1c; padding:32px; border:1px solid #2b2552; border-radius:16px">
+      <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; color:#a78bfa">01</p>
+      <h3 style="font-size:32px; font-weight:600; line-height:1.2">Ingest</h3>
+      <p style="font-size:24px; line-height:1.4; color:#a9a3c9">Documents, Parquet and text become a hashed, traceable corpus. Every checkpoint records which sources trained it.</p>
+    </div>
+    <div style="flex:1; display:flex; flex-direction:column; gap:16px; background:#0c0a1c; padding:32px; border:1px solid #2b2552; border-radius:16px">
+      <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; color:#a78bfa">02</p>
+      <h3 style="font-size:32px; font-weight:600; line-height:1.2">Transfer</h3>
+      <p style="font-size:24px; line-height:1.4; color:#a9a3c9">Donor weights from nine model families, mapped architecture-aware — or pre-train a small model from scratch.</p>
+    </div>
+    <div style="flex:1; display:flex; flex-direction:column; gap:16px; background:#0c0a1c; padding:32px; border:1px solid #2b2552; border-radius:16px">
+      <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; color:#a78bfa">03</p>
+      <h3 style="font-size:32px; font-weight:600; line-height:1.2">Fine-tune</h3>
+      <p style="font-size:24px; line-height:1.4; color:#a9a3c9">LoRA and QLoRA on consumer GPUs; DPO for preferences; GRPO reinforcement learning with verifiable rewards.</p>
+    </div>
+    <div style="flex:1; display:flex; flex-direction:column; gap:16px; background:#0c0a1c; padding:32px; border:1px solid #2b2552; border-radius:16px">
+      <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; color:#a78bfa">04</p>
+      <h3 style="font-size:32px; font-weight:600; line-height:1.2">Compress</h3>
+      <p style="font-size:24px; line-height:1.4; color:#a9a3c9">Distil, merge, prune and quantise to a bit budget; export GGUF for llama.cpp and Ollama, or ONNX.</p>
+    </div>
+    <div style="flex:1; display:flex; flex-direction:column; gap:16px; background:#0c0a1c; padding:32px; border:1px solid #2b2552; border-radius:16px">
+      <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; color:#a78bfa">05</p>
+      <h3 style="font-size:32px; font-weight:600; line-height:1.2">Serve</h3>
+      <p style="font-size:24px; line-height:1.4; color:#a9a3c9">OpenAI- and Anthropic-compatible APIs with continuous batching, guardrails, tool calling, MCP and A2A — on your own hardware.</p>
+    </div>
+  </div>
+  <p style="font-size:28px; line-height:1.4; color:#ddd6f3">Every step is scored and scriptable, so an agent can drive the loop: built-in evaluation, drift detection, and a typed judge that says whether a run was a regression. Models are built by models now — but only where the improvement can be measured.</p>
+  <p style="position:absolute; left:128px; bottom:64px; width:1664px; font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; color:#a9a3c9">Hietanen Consultancy · Fuuga · 04</p>
+  <aside>The pipeline reads left to right. Provenance at step one is what a regulated buyer needs; the evaluation line at the end is what a technical buyer tests.
+
+Detail
+— The whole pipeline is a typed CLI over a recipe file, which is why an agent can run it end to end rather than a person babysitting each stage. Fuuga itself was built that way.
+— Measurement is the bottleneck in automated model development, not compute. A loop that cannot tell whether the retrain helped cannot close, and the typed judge is what closes it.</aside>
+</section>

@@ -1,0 +1,106 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    # Weekly rebuild so repository social-preview images stay current
+    - cron: "0 6 * * 1"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    name: Lint, typecheck, build, validate
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: latest
+
+      - name: Install
+        run: bun install --frozen-lockfile
+
+      - name: Lint
+        run: bun run lint
+
+      - name: Typecheck
+        run: bun run typecheck
+
+      # public/CNAME present            -> custom domain at "/"
+      # repo named <owner>.github.io   -> user/organisation site at "/"
+      # any other repo                 -> project page at https://<owner>.github.io/<repo>/
+      # Pages hostnames are lower-case; GITHUB_REPOSITORY_OWNER keeps the owner's casing.
+      - name: Resolve site base and URL
+        id: base
+        run: |
+          owner="$(echo "${GITHUB_REPOSITORY_OWNER}" | tr "[:upper:]" "[:lower:]")"
+          repo="${GITHUB_REPOSITORY#*/}"
+          if [ -f public/CNAME ]; then
+            echo "site_base=/" >> "$GITHUB_OUTPUT"
+            echo "site_url=https://$(tr -d "[:space:]" < public/CNAME)" >> "$GITHUB_OUTPUT"
+          elif [ "$(echo "$repo" | tr "[:upper:]" "[:lower:]")" = "${owner}.github.io" ]; then
+            echo "site_base=/" >> "$GITHUB_OUTPUT"
+            echo "site_url=https://${owner}.github.io" >> "$GITHUB_OUTPUT"
+          else
+            echo "site_base=/${repo}/" >> "$GITHUB_OUTPUT"
+            echo "site_url=https://${owner}.github.io" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Refresh repository social-preview images
+        run: bun run social-images
+
+      - name: Build static site
+        run: bun run build:static
+        env:
+          SITE_BASE: ${{ steps.base.outputs.site_base }}
+          SITE_URL: ${{ steps.base.outputs.site_url }}
+
+      - name: Validate HTML
+        run: bun run validate:html
+
+      - name: Check SEO
+        run: bun run check:seo
+        env:
+          SITE_URL: ${{ steps.base.outputs.site_url }}
+
+      # Verifies Pages is enabled (Settings → Pages → Source: GitHub Actions)
+      # before the artifact is uploaded, so a missing setting fails here with a
+      # clear message instead of a 404 in the deploy job.
+      - name: Check Pages configuration
+        if: github.event_name != 'pull_request'
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        if: github.event_name != 'pull_request'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist/client
+
+  deploy:
+    name: Deploy to GitHub Pages
+    needs: check
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4

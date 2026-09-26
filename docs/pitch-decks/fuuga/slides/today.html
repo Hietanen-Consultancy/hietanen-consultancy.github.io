@@ -1,0 +1,16 @@
+<section id="today" data-transition="fade" style="background:#0c0a1c; color:#f1eefc; font-family:'IBM Plex Sans', Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:24px">
+  <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; letter-spacing:4px; text-transform:uppercase; color:#a78bfa">What runs today</p>
+  <h2 style="font-size:72px; font-weight:600; line-height:1.1; letter-spacing:-1px">Not a roadmap. A working stack in the repository.</h2>
+  <table style="font-size:26px; color:#ddd6f3; border:1px solid #2b2552">
+    <tr style="background:#1a1636"><th style="width:22%; text-align:left; font-weight:600; color:#f1eefc">Area</th><th style="width:64%; text-align:left; font-weight:600; color:#f1eefc">In the codebase now</th><th style="width:14%; text-align:left; font-weight:600; color:#f1eefc">Status</th></tr>
+    <tr><td>Training</td><td>BPE tokenizer, transformer with RoPE, GQA, MLA and MoE; AdamW and Muon; gradient checkpointing, CPU and NVMe offload for models larger than VRAM</td><td style="color:#c4b5fd">Shipped</td></tr>
+    <tr style="background:#120f2a"><td>Fine-tuning</td><td>SFT, prompt tuning, DPO, GRPO reinforcement learning, rejection sampling, LoRA and QLoRA, adapter merging, typed judge arena for old-versus-new comparisons</td><td style="color:#c4b5fd">Shipped</td></tr>
+    <tr><td>Model operations</td><td>Weight transfer from nine donor families, distillation, N-ary merging, pruning, NF4 and INT8 quantisation, GGUF and ONNX export, HuggingFace round-trip</td><td style="color:#c4b5fd">Shipped</td></tr>
+    <tr style="background:#120f2a"><td>Serving</td><td>OpenAI- and Anthropic-compatible endpoints, both mounted by default, with streaming, function calling, structured outputs, continuous batching, bearer auth, guardrails, MCP and A2A</td><td style="color:#c4b5fd">Shipped</td></tr>
+    <tr><td>Agents</td><td>Local minion delegation with sandboxed tools and skills, multi-model cost-aware orchestration, hybrid RAG with a knowledge graph</td><td style="color:#c4b5fd">Shipped</td></tr>
+    <tr style="background:#120f2a"><td>Image and video</td><td>Stable Diffusion 1.5 implemented from scratch in F#, text-to-video, captioning, exposed as MCP tools</td><td style="color:#c4b5fd">Shipped</td></tr>
+    <tr><td>Quality</td><td>xUnit suite across every module, FsCheck property tests, bit-exact export round-trips, OpenTelemetry observability</td><td style="color:#c4b5fd">Shipped</td></tr>
+  </table>
+  <p style="position:absolute; left:128px; bottom:64px; width:1664px; font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; color:#a9a3c9">Hietanen Consultancy · Fuuga · 05 · Source: Fuuga README, September 2026</p>
+  <aside>This slide answers how much of the stack is real. Everything listed is in the repository today, and a live walkthrough of the code is available as a follow-up.</aside>
+</section>

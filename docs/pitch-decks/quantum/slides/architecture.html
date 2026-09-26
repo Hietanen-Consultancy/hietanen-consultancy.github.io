@@ -1,0 +1,37 @@
+<section id="architecture" data-transition="fade" style="background:#0b2a4d; color:#f0f9ff; font-family:Rubik, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:18px">
+  <p style="font-family:'Fira Code', 'Courier New', monospace; font-size:24px; letter-spacing:4px; text-transform:uppercase; color:#38bdf8">How it works</p>
+  <h2 style="font-size:72px; font-weight:600; line-height:1.1; letter-spacing:-1px">Three layers. Developers touch only the top one.</h2>
+  <div style="display:flex; gap:48px; align-items:center">
+    <div style="flex:1; display:flex; flex-direction:column; gap:16px">
+      <div style="display:flex; gap:24px; align-items:center; background:#38bdf8; padding:22px 36px; border-radius:16px">
+        <p style="width:200px; font-family:'Fira Code', 'Courier New', monospace; font-size:24px; color:#061a33">Layer 1</p>
+        <div style="flex:1; display:flex; flex-direction:column; gap:6px">
+          <h3 style="font-size:32px; font-weight:600; line-height:1.2; color:#061a33">Builders — the business vocabulary</h3>
+          <p style="font-size:24px; line-height:1.4; color:#0b2a4d">TSP, scheduling, assignment, knapsack, portfolio, network flow; fraud, churn, workforce. Written by .NET developers or by their agents.</p>
+        </div>
+      </div>
+      <x-shape kind="arrow-down" style="width:48px; height:26px; background:#7dd3fc; align-self:center"></x-shape>
+      <div style="display:flex; gap:24px; align-items:center; background:#061a33; padding:22px 36px; border:1px solid #1e4976; border-radius:16px">
+        <p style="width:200px; font-family:'Fira Code', 'Courier New', monospace; font-size:24px; color:#7dd3fc">Layer 2</p>
+        <div style="flex:1; display:flex; flex-direction:column; gap:6px">
+          <h3 style="font-size:32px; font-weight:600; line-height:1.2">Solvers — the algorithms</h3>
+          <p style="font-size:24px; line-height:1.4; color:#bae6fd">QAOA for optimisation, VQE and ADAPT-VQE for chemistry, Grover, QFT-based arithmetic and phase estimation.</p>
+        </div>
+      </div>
+      <x-shape kind="arrow-down" style="width:48px; height:26px; background:#7dd3fc; align-self:center"></x-shape>
+      <div style="display:flex; gap:24px; align-items:center; background:#061a33; padding:22px 36px; border:1px solid #1e4976; border-radius:16px">
+        <p style="width:200px; font-family:'Fira Code', 'Courier New', monospace; font-size:24px; color:#7dd3fc">Layer 3</p>
+        <div style="flex:1; display:flex; flex-direction:column; gap:6px">
+          <h3 style="font-size:32px; font-weight:600; line-height:1.2">Backends — one interface, every machine</h3>
+          <p style="font-size:24px; line-height:1.4; color:#bae6fd">Local simulator, gate-based QPUs through Azure Quantum and Braket, D-Wave annealers, a topological simulator. Circuits arrive as OpenQASM from Qiskit and leave as OpenQASM, QIR or a MAVLink mission.</p>
+        </div>
+      </div>
+    </div>
+    <div style="width:480px; display:flex; flex-direction:column; gap:20px; background:#061a33; padding:20px; border:1px solid #1e4976; border-radius:16px">
+      <h3 style="font-size:32px; font-weight:600; line-height:1.2">Quantum-first, honestly</h3>
+      <p style="font-size:26px; line-height:1.4; color:#bae6fd">A quantum solver never silently hands back a classical answer: if the hardware cannot solve it, the caller gets an error, not a disguise. HybridSolver routes to a classical baseline only when asked.</p>
+    </div>
+  </div>
+  <p style="position:absolute; left:128px; bottom:64px; width:1664px; font-family:'Fira Code', 'Courier New', monospace; font-size:24px; color:#bae6fd">Hietanen Consultancy · FSharp.Azure.Quantum · 04</p>
+  <aside>The honesty box is commercial rather than decorative: an investor who has seen quantum vapourware will test exactly this. The design rule — no silent classical fallback — is in the README and enforced in the tests.</aside>
+</section>

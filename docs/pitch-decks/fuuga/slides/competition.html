@@ -1,0 +1,22 @@
+<section id="competition" data-transition="fade" style="background:#0c0a1c; color:#f1eefc; font-family:'IBM Plex Sans', Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:18px">
+  <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; letter-spacing:4px; text-transform:uppercase; color:#a78bfa">Competition</p>
+  <h2 style="font-size:72px; font-weight:600; line-height:1.1; letter-spacing:-1px">Python or hosted. Nobody else makes and measures models inside a .NET product.</h2>
+  <table style="font-size:26px; color:#ddd6f3; border:1px solid #2b2552">
+    <tr style="background:#1a1636"><th style="width:28%; text-align:left; font-weight:600; color:#f1eefc">Capability</th><th style="width:18%; text-align:left; font-weight:600; color:#c4b5fd">Fuuga</th><th style="width:18%; text-align:left; font-weight:600; color:#f1eefc">Python stack</th><th style="width:18%; text-align:left; font-weight:600; color:#f1eefc">.NET consumers</th><th style="width:18%; text-align:left; font-weight:600; color:#f1eefc">Hosted APIs and AI startups</th></tr>
+    <tr><td>Pre-train and fine-tune a model</td><td style="color:#c4b5fd">Yes</td><td>Yes</td><td>No</td><td>Limited, on their servers</td></tr>
+    <tr style="background:#120f2a"><td>Runs without a Python runtime</td><td style="color:#c4b5fd">Yes</td><td>No</td><td>Yes</td><td>Not applicable</td></tr>
+    <tr><td>Data stays on customer hardware</td><td style="color:#c4b5fd">Yes</td><td>Yes</td><td>Inference only</td><td>No</td></tr>
+    <tr style="background:#120f2a"><td>Serve OpenAI- and Anthropic-compatible APIs</td><td style="color:#c4b5fd">Both, by default</td><td>OpenAI, separate tool</td><td>Partly</td><td>Their own</td></tr>
+    <tr><td>Fits an existing .NET team</td><td style="color:#c4b5fd">Yes</td><td>New team needed</td><td>Yes</td><td>Yes</td></tr>
+    <tr style="background:#120f2a"><td>Training provenance and audit trail</td><td style="color:#c4b5fd">Built in</td><td>Assemble yourself</td><td>Not applicable</td><td>Vendor statement</td></tr>
+    <tr><td>Take the finished weights elsewhere</td><td style="color:#c4b5fd">GGUF, safetensors, ONNX</td><td>Yes</td><td>Import only</td><td>No</td></tr>
+  </table>
+  <p style="font-size:26px; line-height:1.4; color:#a9a3c9">Python stack: PyTorch, HuggingFace, Unsloth, Axolotl, vLLM. .NET consumers: Semantic Kernel, LLamaSharp, ONNX Runtime GenAI, ML.NET. Hosted APIs and AI startups: OpenAI, Anthropic, Azure OpenAI, Mistral, and typed-output entrants such as Jev — all hosted, all keeping the weights.</p>
+  <p style="position:absolute; left:128px; bottom:64px; width:1664px; font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; color:#a9a3c9">Hietanen Consultancy · Fuuga · 12</p>
+  <aside>Two answers this table is built to give.
+
+Detail
+— Python: the buyer does not have a Python team and will not get one approved.
+— Semantic Kernel and the other .NET consumers: they call models, they do not make them.
+— The typed-output startups validate the category and raised real money for it. Every one of them is a hosted service that keeps the weights, which is what the third and last rows measure.</aside>
+</section>

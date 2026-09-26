@@ -1,0 +1,33 @@
+<section id="decisions" data-transition="fade" style="background:#0c0a1c; color:#f1eefc; font-family:'IBM Plex Sans', Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:18px">
+  <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; letter-spacing:4px; text-transform:uppercase; color:#a78bfa">Where it pays first</p>
+  <h2 style="font-size:72px; font-weight:600; line-height:1.1; letter-spacing:-1px">Typed decisions: the part of AI a business can actually measure.</h2>
+  <div style="display:flex; gap:24px">
+    <div style="flex:1; display:flex; flex-direction:column; gap:14px; background:#120f2a; padding:22px; border:1px solid #2b2552; border-radius:16px">
+      <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; color:#a78bfa">The data they have</p>
+      <h3 style="font-size:30px; font-weight:600; line-height:1.2">Outcomes, not a corpus</h3>
+      <p style="font-size:24px; line-height:1.4; color:#a9a3c9">Few companies own a training corpus, and building one is a project nobody funds. Every company owns outcomes: which team took the case, whether the claim was approved, whether the transaction was fraud. Labels, produced by running the business.</p>
+    </div>
+    <div style="flex:1; display:flex; flex-direction:column; gap:14px; background:#120f2a; padding:22px; border:1px solid #a78bfa; border-radius:16px">
+      <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; color:#a78bfa">The number they get</p>
+      <h3 style="font-size:30px; font-weight:600; line-height:1.2">An answer to "is it better?"</h3>
+      <p style="font-size:24px; line-height:1.4; color:#a9a3c9">Nobody can say whether a fine-tuned chat model beats the one it replaced. A typed decision has ground truth, so it has arithmetic: accuracy, log loss, Brier score and calibration error. <b style="color:#f1eefc">Right [94]% of the time, and when it reports 90% confidence it is right 90% of the time.</b></p>
+    </div>
+    <div style="flex:1; display:flex; flex-direction:column; gap:14px; background:#120f2a; padding:22px; border:1px solid #2b2552; border-radius:16px">
+      <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; color:#a78bfa">The line it moves</p>
+      <h3 style="font-size:30px; font-weight:600; line-height:1.2">Act, or escalate</h3>
+      <p style="font-size:24px; line-height:1.4; color:#a9a3c9">Above the threshold the software acts; below it the case goes to a person. The share handled without a human is the return — measured, not asserted.</p>
+    </div>
+  </div>
+  <div style="display:flex; flex-direction:column; gap:10px; background:#120f2a; padding:20px 36px; border:1px solid #2b2552; border-radius:16px">
+    <p style="font-size:26px; line-height:1.4; color:#ddd6f3"><b>Nothing here generates text.</b> Fuuga scores a fixed set of options in one pass and returns a calibrated probability for each, so the answer can be logged, audited and priced.</p>
+    <p style="font-size:26px; line-height:1.4; color:#ddd6f3">When the output really is prose, the judge is typed too: old against new as one closed choice, asked both ways round.</p>
+  </div>
+  <p style="position:absolute; left:128px; bottom:64px; width:1664px; font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; color:#a9a3c9">Hietanen Consultancy · Fuuga · 07</p>
+  <aside>The commercial answer to the two objections every technical buyer raises: we have no training data, and we cannot tell whether a retrained model got better. Both are true of chat and neither is true of a typed decision.
+
+Common questions
+— "How would you know the retrain helped?" Public benchmarks usually fall after a domain fine-tune, so a team watching MMLU concludes the model went backwards exactly when it got better at its own job. The typed arena compares the two models on the customer's own work instead, and reports how well calibrated the judge itself is.
+
+Status
+— The accuracy figure stays bracketed until a customer agrees to publish one. Engines are trained and evaluated inside the customer's environment on their own cases; the number leaves only with their consent, and the data never leaves at all.</aside>
+</section>

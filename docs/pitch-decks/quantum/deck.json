@@ -1,0 +1,65 @@
+{
+ "v": 4,
+ "createdOnFiles": {
+  "v": 1,
+  "at": "2026-09-21T12:00:00Z"
+ },
+ "title": "Quantum Drone Investor Deck",
+ "cover": "cover",
+ "order": [
+  "cover",
+  "problem",
+  "product",
+  "architecture",
+  "drones",
+  "sell",
+  "whynow",
+  "market",
+  "model",
+  "gtm",
+  "competition",
+  "moat",
+  "traction",
+  "team",
+  "roadmap",
+  "funds",
+  "projections",
+  "assumptions",
+  "ask"
+ ],
+ "sections": {
+  "s1": {
+   "description": "Why fleet coordination needs a developer-grade quantum library",
+   "start": "cover"
+  },
+  "s2": {
+   "description": "What FSharp.Azure.Quantum is and what flies today",
+   "start": "product"
+  },
+  "s3": {
+   "description": "What we sell, who buys it and the drone-first route",
+   "start": "sell"
+  },
+  "s4": {
+   "description": "Team, plan and the numbers",
+   "start": "traction"
+  }
+ },
+ "faces": {
+  "rubik": {
+   "family": "Rubik",
+   "href": "https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap"
+  },
+  "fira-code": {
+   "family": "Fira Code",
+   "href": "https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap"
+  }
+ },
+ "designSystems": [],
+ "artifact": "https://claude.ai/artifact/FSXy1JgvTFTazCAjGp1uwF",
+ "assets": {
+  "seal.svg": "e1e416d870c6bfe6d49d1f8ee43fbb62",
+  "drone-swarm.jpg": "f0dd69289ec0eea728621e89aa69b9f2",
+  "tuomas-hietanen.png": "cb41bb85270fa0f08f78f45a27f38df7"
+ }
+}

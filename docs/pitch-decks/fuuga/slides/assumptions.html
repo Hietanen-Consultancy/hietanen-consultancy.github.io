@@ -1,0 +1,33 @@
+<section id="assumptions" data-transition="fade" style="background:#120f2a; color:#f1eefc; font-family:'IBM Plex Sans', Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:18px">
+  <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; letter-spacing:4px; text-transform:uppercase; color:#a78bfa">Assumptions and risks</p>
+  <h2 style="font-size:72px; font-weight:600; line-height:1.1; letter-spacing:-1px">The drivers behind the numbers, and what could break them.</h2>
+  <div style="display:flex; gap:32px">
+    <div style="flex:1; display:flex; flex-direction:column; gap:14px; background:#0c0a1c; padding:28px; border:1px solid #2b2552; border-radius:16px">
+      <h3 style="font-size:30px; font-weight:600; line-height:1.2">Drivers</h3>
+      <ul style="font-size:24px; line-height:1.45; color:#a9a3c9; padding:0 0 0 30px">
+        <li>Supported builds and continuity [£60k] a year, renewing because turnover recurs: at two-to-three-year tenure a team trained in year one is half-replaced by year three</li>
+        <li>Partner enablement and certification from year two: [N] implementation partners at [£__k] each</li>
+        <li>Embedded OEM licence ACV [£80k] — upside, and unevidenced until the first vendor deal</li>
+        <li>Quota-carrying sellers from month [7] at [5] closes a year each — one in year one, [3] by year three to reach thirty</li>
+        <li>Fully loaded engineer cost [£110k] a year, London and remote mix</li>
+        <li>Gross margin ~80% on support, continuity and partner revenue, ~45% on engagements; training compute is bought by the customer, so it is not in the revenue line at all</li>
+      </ul>
+    </div>
+    <div style="flex:1; display:flex; flex-direction:column; gap:14px; background:#0c0a1c; padding:28px; border:1px solid #2b2552; border-radius:16px">
+      <h3 style="font-size:30px; font-weight:600; line-height:1.2">Risks and how we answer them</h3>
+      <ul style="font-size:24px; line-height:1.45; color:#a9a3c9; padding:0 0 0 30px">
+        <li><b>A hosted tenancy in-region answers residency for most buyers.</b> It does, and we do not pretend otherwise. It does not answer software shipping into someone else's network, an air-gapped estate, or a regulator who wants evidence. That is where we sell.</li>
+        <li><b>Microsoft closes the .NET inference gap.</b> Their tools call models; ours makes and measures them. We implement Microsoft.Extensions.AI and export ONNX, so their progress widens the funnel.</li>
+        <li><b>Key-person dependency.</b> The round funds senior hires with equity, and every module ships with unit and property tests so the work is transferable rather than tribal.</li>
+      </ul>
+    </div>
+  </div>
+  <p style="position:absolute; left:128px; bottom:64px; width:1664px; font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; color:#a9a3c9">Hietanen Consultancy · Fuuga · 19</p>
+  <aside>Residency leads the risk column because it is the strongest objection. A hosted tenancy in-region satisfies most compliance teams, and a deck that pretends otherwise is not worth reading.
+
+Common questions
+— "What is the sales cycle?" Two to three months for a vendor, six for a regulated buyer direct. Services are held flat as a share, with the consultancy team at four.
+— "Can you legally train on a hosted model's output?" Provider terms restrict it. Decision engines train on the customer's own recorded outcomes and need no teacher at all; counsel's view on the distillation path is in the data room.
+— "What if the code is forked commercially?" Buyers pay for support, signed builds and people, none of which fork. The moat slide develops this.
+— "What about GPU cost volatility?" Consumer-GPU fine-tuning and CPU serving are core design goals, not workarounds.</aside>
+</section>

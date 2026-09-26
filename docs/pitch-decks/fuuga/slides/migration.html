@@ -1,0 +1,44 @@
+<section id="migration" data-transition="fade" style="background:#0c0a1c; color:#f1eefc; font-family:'IBM Plex Sans', Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:18px">
+  <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; letter-spacing:4px; text-transform:uppercase; color:#a78bfa">Adoption path</p>
+  <h2 style="font-size:72px; font-weight:600; line-height:1.1; letter-spacing:-1px">The bill is the business case. Move a workload only when the numbers say so.</h2>
+  <div style="display:flex; gap:32px">
+    <div style="flex:1; display:flex; flex-direction:column; gap:14px">
+      <div style="display:flex; gap:24px; align-items:start; background:#120f2a; padding:22px 28px; border:1px solid #2b2552; border-radius:12px">
+        <p style="width:56px; font-family:'JetBrains Mono', 'Courier New', monospace; font-size:26px; color:#a78bfa">01</p>
+        <p style="flex:1; font-size:24px; line-height:1.4; color:#a9a3c9"><b style="color:#f1eefc">Connect, do not rewrite.</b> Fuuga speaks both the OpenAI and the Anthropic interface, and serves them together by default. An application built on either is pointed at a new address.</p>
+      </div>
+      <div style="display:flex; gap:24px; align-items:start; background:#120f2a; padding:22px 28px; border:1px solid #2b2552; border-radius:12px">
+        <p style="width:56px; font-family:'JetBrains Mono', 'Courier New', monospace; font-size:26px; color:#a78bfa">02</p>
+        <p style="flex:1; font-size:24px; line-height:1.4; color:#a9a3c9"><b style="color:#f1eefc">Run both, route by rule.</b> Sensitive or routine requests go to the in-house model, the rest to the existing subscription, within a budget.</p>
+      </div>
+      <div style="display:flex; gap:24px; align-items:start; background:#120f2a; padding:22px 28px; border:1px solid #2b2552; border-radius:12px">
+        <p style="width:56px; font-family:'JetBrains Mono', 'Courier New', monospace; font-size:26px; color:#a78bfa">03</p>
+        <p style="flex:1; font-size:24px; line-height:1.4; color:#a9a3c9"><b style="color:#f1eefc">Learn from the incumbent.</b> Fuuga trains the in-house model on the hosted model's answers to the company's own prompts.</p>
+      </div>
+      <div style="display:flex; gap:24px; align-items:start; background:#120f2a; padding:22px 28px; border:1px solid #2b2552; border-radius:12px">
+        <p style="width:56px; font-family:'JetBrains Mono', 'Courier New', monospace; font-size:26px; color:#a78bfa">04</p>
+        <p style="flex:1; font-size:24px; line-height:1.4; color:#a9a3c9"><b style="color:#f1eefc">Switch when the numbers say so.</b> A typed judge compares old against new on the company's own work, not a benchmark. When it passes, the workload moves and the subscription shrinks.</p>
+      </div>
+    </div>
+    <div style="width:560px; display:flex; flex-direction:column; gap:16px; background:#120f2a; padding:28px; border:1px solid #a78bfa; border-radius:16px">
+      <h3 style="font-size:30px; font-weight:600; line-height:1.2">Why a company bothers</h3>
+      <ul style="font-size:24px; line-height:1.45; color:#ddd6f3; padding:0 0 0 30px">
+        <li>Every switch is justified by a measured comparison, not a promise</li>
+        <li>The workloads compliance currently blocks become possible</li>
+        <li>A per-request bill becomes a fixed, predictable cost</li>
+        <li>No vendor can retire the model underneath a live product</li>
+        <li>The weights leave as GGUF, safetensors or ONNX — it runs anywhere, including without us</li>
+      </ul>
+    </div>
+  </div>
+  <p style="position:absolute; left:128px; bottom:64px; width:1664px; font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; color:#a9a3c9">Hietanen Consultancy · Fuuga · 11 · fuuga-serve --api-compat both; cost-aware orchestrator; distill --teacher-endpoint; export gguf / onnx</p>
+  <aside>The answer to an existing OpenAI or Anthropic subscription: coexistence first, then migration by evidence.
+
+Detail
+— Every step names a shipped feature — the two compatible APIs, the cost-aware router, endpoint distillation and the quality gate.
+— The export line settles the lock-in question: we are the only party in the conversation that does not hold the customer's weights.
+— An existing AI strategy is not replaced. It gains an in-house option for the parts it could not cover.
+
+Common questions
+— "Why else would a company bother?" The model keeps learning from their own data, and the result is an asset they own, maintained by their own engineers.</aside>
+</section>
