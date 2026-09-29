@@ -1,0 +1,48 @@
+<section id="assumptions" data-transition="fade" style="background:#120f2a; color:#f1eefc; font-family:'IBM Plex Sans', Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
+  <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; letter-spacing:4px; text-transform:uppercase; color:#a78bfa">Assumptions and risks</p>
+  <h2 style="font-size:72px; font-weight:600; line-height:1.1; letter-spacing:-1px">The drivers behind the numbers, and what could break them.</h2>
+  <div style="display:flex; gap:32px">
+    <div style="flex:1; display:flex; flex-direction:column; gap:16px; background:#0c0a1c; padding:32px; border:1px solid #2b2552; border-radius:16px">
+      <h3 style="font-size:32px; font-weight:600; line-height:1.2">Drivers</h3>
+      <ul style="font-size:28px; line-height:1.5; color:#a9a3c9; padding:0 0 0 30px">
+        <li>We run it £100k a year — half of customers</li>
+        <li>They run it £60k a year — the other half</li>
+        <li>Partners £30k each: 5, then 20</li>
+        <li>Three sellers by year three, five closes each</li>
+        <li>Engineers £110k fully loaded</li>
+      </ul>
+    </div>
+    <div style="flex:1; display:flex; flex-direction:column; gap:16px; background:#0c0a1c; padding:32px; border:1px solid #2b2552; border-radius:16px">
+      <h3 style="font-size:32px; font-weight:600; line-height:1.2">Risks, and our answer</h3>
+      <ul style="font-size:28px; line-height:1.5; color:#a9a3c9; padding:0 0 0 30px">
+        <li>In-region hosting suffices for most — we sell where it does not</li>
+        <li>Microsoft adds training — we plug into their interfaces</li>
+        <li>Key person — public code and tests make it transferable</li>
+      </ul>
+    </div>
+  </div>
+  <p style="position:absolute; left:128px; bottom:64px; width:1664px; font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; color:#a9a3c9">Hietanen Consultancy · Fuuga · 19</p>
+  <aside>Residency leads the risk column because it is the strongest objection, and the market slide already sizes for it.
+
+Drivers
+— Managed operation at £100k a year: one engineer at £110k fully loaded runs about three customers' engines, so the line earns about 60% gross margin. There is no public price for this service; it is our estimate and the first contracts set it.
+— Half of customers are assumed to have us run it. Regulated buyers without a model team lean that way; the split is the estimate most worth testing in the first ten sales.
+— Continuity at £60k a year for customers who run it themselves renews because turnover recurs: at two-to-three-year tenure, a team trained in year one is half-replaced by year three.
+— Partner enablement from year two: five implementation partners at £30k each for training, certification and escalation, twenty by year three.
+— OEM licences and per-token hosting are long-term and carry nothing in the numbers.
+— Running engines scales with headcount: seventeen customers in year three is about six engineers on operations, inside the eighteen at year end.
+— Quota-carrying sellers from month seven at five closes a year each: one in year one, three by year three. Three sellers bring fifteen of year three's twenty-three new organisations; certified partners bring the rest.
+— Five closes a seller is the honest middle: the median SaaS account executive quota is about $800k of new annual contract value, and only about half of them hit it.
+— Fully loaded engineer cost of £110k: a London median base of about £85k times a 1.25–1.4 on-cost.
+— Gross margin about 45% on consulting, about 60% on running it, about 80% on continuity and partner revenue. Training compute is bought by the customer, so it is not in the revenue line at all.
+
+Risks
+— A hosted tenancy in-region answers residency for most buyers. It does not answer software shipping into someone else's network, an air-gapped estate, or a regulator who wants evidence.
+— Microsoft closing the .NET gap: their tools call models; ours makes and measures them. Fuuga implements Microsoft.Extensions.AI and exports ONNX, so their progress widens the funnel.
+— Key-person dependency: the round funds senior hires with equity, and every module ships with unit and property tests, so the work is transferable rather than tribal.
+
+Common questions
+— "What is the sales cycle?" Two to three months for a vendor, six for a regulated buyer direct.
+— "Can you legally train on a hosted model's output?" Provider terms restrict it. Decision engines train on the customer's own recorded outcomes and need no teacher at all; counsel's view on the distillation path is in the data room.
+— "What about GPU cost volatility?" Consumer-GPU fine-tuning and CPU serving are core design goals, not workarounds.</aside>
+</section>

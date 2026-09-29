@@ -1,0 +1,37 @@
+<section id="migration" data-transition="fade" style="background:#0c0a1c; color:#f1eefc; font-family:'IBM Plex Sans', Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
+  <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; letter-spacing:4px; text-transform:uppercase; color:#a78bfa">Adoption path</p>
+  <h2 style="font-size:72px; font-weight:600; line-height:1.1; letter-spacing:-1px">The bill is the business case. Move a workload only when the numbers say so.</h2>
+  <div style="display:flex; gap:20px; align-items:stretch">
+    <div style="flex:1; display:flex; flex-direction:column; gap:16px; background:#120f2a; padding:32px; border:1px solid #2b2552; border-radius:16px">
+      <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; color:#a78bfa">01</p>
+      <h3 style="font-size:34px; font-weight:600; line-height:1.2">Connect</h3>
+      <p style="font-size:28px; line-height:1.4; color:#a9a3c9">Same OpenAI and Anthropic interfaces; point the app at a new address.</p>
+    </div>
+    <div style="flex:1; display:flex; flex-direction:column; gap:16px; background:#120f2a; padding:32px; border:1px solid #2b2552; border-radius:16px">
+      <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; color:#a78bfa">02</p>
+      <h3 style="font-size:34px; font-weight:600; line-height:1.2">Route</h3>
+      <p style="font-size:28px; line-height:1.4; color:#a9a3c9">Sensitive and routine requests in-house, the rest to the subscription.</p>
+    </div>
+    <div style="flex:1; display:flex; flex-direction:column; gap:16px; background:#120f2a; padding:32px; border:1px solid #2b2552; border-radius:16px">
+      <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; color:#a78bfa">03</p>
+      <h3 style="font-size:34px; font-weight:600; line-height:1.2">Learn</h3>
+      <p style="font-size:28px; line-height:1.4; color:#a9a3c9">Train the in-house model on the company's own traffic.</p>
+    </div>
+    <div style="flex:1; display:flex; flex-direction:column; gap:16px; background:#120f2a; padding:32px; border:1px solid #a78bfa; border-radius:16px">
+      <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; color:#a78bfa">04</p>
+      <h3 style="font-size:34px; font-weight:600; line-height:1.2">Switch</h3>
+      <p style="font-size:28px; line-height:1.4; color:#a9a3c9">When the measured comparison passes, the subscription shrinks.</p>
+    </div>
+  </div>
+  <p style="font-size:30px; line-height:1.4; color:#ddd6f3">A rising per-request bill becomes a fixed cost — and the weights leave in standard formats, so it runs anywhere, including without us.</p>
+  <p style="position:absolute; left:128px; bottom:64px; width:1664px; font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; color:#a9a3c9">Hietanen Consultancy · Fuuga · 11 · fuuga-serve --api-compat both; cost-aware router; distill --teacher-endpoint; export gguf / onnx</p>
+  <aside>The answer to an existing OpenAI, Anthropic or Azure OpenAI subscription: coexistence first, then migration by evidence.
+
+Detail
+— Connect: Fuuga speaks both the OpenAI and the Anthropic interface and serves them together by default, so an application built on either is pointed at a new address and the code that calls the model stays as it is.
+— Route: the cost-aware router sends sensitive or routine requests to the in-house model and the rest to the existing subscription, within a budget.
+— Learn: endpoint distillation collects the hosted model's answers to the company's own prompts and trains the in-house model on them.
+— Switch: a typed judge compares old against new on the company's own work, not a benchmark. When it passes, the workload moves.
+— Every step names a shipped feature. An existing AI strategy is not replaced; it gains an in-house option for the parts compliance blocks, the bills that keep growing, and the models a vendor may retire.
+— The export line settles the lock-in question: the weights leave as GGUF, safetensors or ONNX, and we are the only party in the conversation that does not hold them.</aside>
+</section>

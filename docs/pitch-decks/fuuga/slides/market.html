@@ -1,0 +1,46 @@
+<section id="market" data-transition="fade" style="background:#120f2a; color:#f1eefc; font-family:'IBM Plex Sans', Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
+  <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; letter-spacing:4px; text-transform:uppercase; color:#a78bfa">Market</p>
+  <h2 style="font-size:72px; font-weight:600; line-height:1.1; letter-spacing:-1px">About 900 European banks and insurers need a model they own: a £55m-a-year market.</h2>
+  <!-- 9,163 = 4,834 EU credit institutions end 2024 (ECB data, EBF Facts and Figures 2025, https://www.ebf.eu/wp-content/uploads/2025/12/EBF-Fact-and-Figures-2025-18-December-2025.pdf) -->
+  <!--   + 3,037 EEA insurers, EIOPA register Feb 2024 (quoted by SCOR, https://www.scor.com/en/expert-views/solvency-reinsurance-europe-review-solvency-ii-report-year-end-2024) -->
+  <!--   + 708 deposit-takers + 584 insurers (PRA Business Plan 2025/26, https://www.bankofengland.co.uk/prudential-regulation/publication/2025/april/pra-business-plan-2025-26). -->
+  <!-- 30% .NET: 29.9% of professional developers use C#, Stack Overflow 2025 (https://survey.stackoverflow.co/2025/technology). 9,163 × 0.30 = 2,749. -->
+  <!-- One in three cannot use hosted: estimate, no source. 2,749 / 3 = 916. 916 × £60k = £55.0m. -->
+  <div style="display:flex; gap:20px; align-items:stretch">
+    <div style="flex:1; display:flex; flex-direction:column; gap:12px; background:#0c0a1c; padding:32px; border:1px solid #2b2552; border-radius:16px">
+      <p style="font-size:64px; font-weight:600; line-height:1.0; color:#f1eefc">9,160</p>
+      <p style="font-size:28px; line-height:1.35; color:#a9a3c9">regulated banks and insurers in the EU, EEA and UK</p>
+    </div>
+    <div style="flex:1; display:flex; flex-direction:column; gap:12px; background:#0c0a1c; padding:32px; border:1px solid #2b2552; border-radius:16px">
+      <p style="font-size:64px; font-weight:600; line-height:1.0; color:#f1eefc">2,750</p>
+      <p style="font-size:28px; line-height:1.35; color:#a9a3c9">run their core systems on .NET — about 30%</p>
+    </div>
+    <div style="flex:1; display:flex; flex-direction:column; gap:12px; background:#0c0a1c; padding:32px; border:1px solid #a78bfa; border-radius:16px">
+      <p style="font-size:64px; font-weight:600; line-height:1.0; color:#c4b5fd">900</p>
+      <p style="font-size:28px; line-height:1.35; color:#a9a3c9">cannot use a hosted model — about one in three</p>
+    </div>
+    <div style="flex:1; display:flex; flex-direction:column; gap:12px; background:#0c0a1c; padding:32px; border:1px solid #a78bfa; border-radius:16px">
+      <p style="font-size:64px; font-weight:600; line-height:1.0; color:#c4b5fd">£55m</p>
+      <p style="font-size:28px; line-height:1.35; color:#a9a3c9">a year at £60k continuity each</p>
+    </div>
+  </div>
+  <p style="font-size:30px; line-height:1.4; color:#ddd6f3">Thirty-five customers in year three is 4% of it. Public bodies, and the software vendors who ship into these estates, come on top.</p>
+  <p style="position:absolute; left:128px; bottom:64px; width:1664px; font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; color:#a9a3c9">Hietanen Consultancy · Fuuga · 08 · Sources: ECB, EIOPA and PRA registers; Stack Overflow 2025</p>
+  <aside>Serviceable market, built bottom-up from public registers rather than a top-down AI figure.
+
+The arithmetic
+— 4,834 EU credit institutions (ECB data, end 2024, as published in EBF Facts and Figures 2025) + 3,037 EEA insurance undertakings (EIOPA register, February 2024) + 708 deposit-takers and 584 insurers regulated by the UK PRA (Business Plan 2025/26) = 9,163 regulated banks and insurers.
+— About 30% run their core business systems on .NET: 29.9% of professional developers reported extensive C# work in the Stack Overflow 2025 survey, and .NET's share is higher than average in finance and insurance. That gives about 2,750 organisations.
+— About one in three of those cannot put their data into a hosted model at all: air-gapped estates, sovereignty requirements, or a supervisor who wants evidence of how the model was trained rather than a vendor statement. That gives about 916, shown as 900.
+— At £60k a year for supported builds and continuity, 916 organisations are worth about £55m a year, before any engagement revenue. That is the floor: at the projections' half-and-half mix with managed operation at £100k, the average is £80k and the market about £73m.
+
+The two shares are the estimate; the registers are fact. Each assumption can be tested by screening the list, and halving both still leaves a market thirty-five customers do not exhaust.
+
+Who else buys
+— Consultancies implementing Fuuga for their clients buy training, certification and an escalation path.
+— Nordic and smaller-language organisations, where hosted models underserve Finnish, Swedish and domain vocabularies.
+— Software vendors shipping on-premises .NET products into health, industry, the public sector and the defence supply chain — the later door, once the stack is proven in their customers' networks.
+
+Residency
+— Azure OpenAI inside a customer's own tenancy satisfies most compliance teams, and the one-in-three share reflects that. It does not satisfy an air-gapped estate, a vendor shipping software into a hospital network, or a regulator who wants evidence. That is the market.</aside>
+</section>

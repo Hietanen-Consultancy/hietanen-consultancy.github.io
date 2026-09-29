@@ -1,0 +1,117 @@
+{
+ "v": 4,
+ "createdOnFiles": {
+  "v": 1,
+  "at": "2026-09-21T12:00:00Z"
+ },
+ "title": "Fuuga Investor Deck",
+ "cover": "cover",
+ "order": [
+  "cover",
+  "problem",
+  "product",
+  "pipeline",
+  "today",
+  "whynow",
+  "decisions",
+  "market",
+  "model",
+  "gtm",
+  "migration",
+  "competition",
+  "moat",
+  "traction",
+  "team",
+  "roadmap",
+  "funds",
+  "projections",
+  "assumptions",
+  "selfpath",
+  "ask"
+ ],
+ "sections": {
+  "s1": {
+   "description": "Why enterprises need to own their AI, and cannot today",
+   "start": "cover"
+  },
+  "s2": {
+   "description": "What Fuuga is and what runs today",
+   "start": "product"
+  },
+  "s3": {
+   "description": "Where it pays first, who buys it and on what terms",
+   "start": "whynow"
+  },
+  "s4": {
+   "description": "Team, plan and the numbers",
+   "start": "traction"
+  }
+ },
+ "faces": {
+  "ibm-plex-sans": {
+   "family": "IBM Plex Sans",
+   "href": "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap"
+  },
+  "jetbrains-mono": {
+   "family": "JetBrains Mono",
+   "href": "https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap"
+  }
+ },
+ "designSystems": [],
+ "artifact": "https://claude.ai/artifact/HeZZsKrdFRtMZzKAX94zSK",
+ "assets": {
+  "seal.svg": "9808e285bbdd6b05f09f5fdaecc74d2b",
+  "fuuga-logo.png": "3863cf71054a6bcdb76c923d3531a665",
+  "tuomas-hietanen.png": "316cb9d770d37d4f31113caafd3032e2"
+ },
+ "variants": {
+  "customer": {
+   "title": "Fuuga Customer Briefing",
+   "createdOnFiles": {
+    "v": 1,
+    "at": "2026-09-29T12:00:00Z"
+   },
+   "artifact": "https://claude.ai/artifact/UhDXDfKmGPtUocoPsLWjPV",
+   "assets": {
+    "seal.svg": "e080fda658171d576bd52533c972caec",
+    "fuuga-logo.png": "6953766c1dc1aabd0d245b147c3b17f2",
+    "tuomas-hietanen.png": "8e7c1deccc4100117d0e4324751324ba"
+   },
+   "order": [
+    "cover",
+    "problem",
+    "product",
+    "pipeline",
+    "today",
+    "whynow",
+    "decisions",
+    "migration",
+    "competition",
+    "team",
+    "offer"
+   ],
+   "sections": {
+    "s1": {
+     "description": "Why a company should own its AI model",
+     "start": "cover"
+    },
+    "s2": {
+     "description": "What Fuuga is and what runs today",
+     "start": "product"
+    },
+    "s3": {
+     "description": "Where it pays first and how you adopt it",
+     "start": "whynow"
+    },
+    "s4": {
+     "description": "Who we are and how to start",
+     "start": "team"
+    }
+   },
+   "replace": {
+    "Investor briefing": "Customer briefing",
+    "Confidential · hietanen.co.uk": "hietanen.co.uk"
+   }
+  }
+ }
+}

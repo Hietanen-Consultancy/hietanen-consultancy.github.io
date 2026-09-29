@@ -1,0 +1,55 @@
+<section id="projections" data-transition="fade" style="background:#061a33; color:#f0f9ff; font-family:Rubik, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:24px">
+  <p style="font-family:'Fira Code', 'Courier New', monospace; font-size:24px; letter-spacing:4px; text-transform:uppercase; color:#38bdf8">Financials · projections</p>
+  <h2 style="font-size:72px; font-weight:600; line-height:1.1; letter-spacing:-1px">Projects carry the first two years. Recurring lines pass them in year three.</h2>
+  <div style="display:flex; gap:48px; align-items:end">
+    <table style="flex:1; font-size:26px; color:#e0f2fe; border:1px solid #1e4976; font-variant-numeric:tabular-nums">
+      <tr style="background:#0f3560"><th style="width:40%; text-align:left; font-weight:600; color:#f0f9ff">Revenue line (illustrative scenario)</th><th style="width:20%; text-align:right; font-weight:600; color:#f0f9ff">Year 1</th><th style="width:20%; text-align:right; font-weight:600; color:#f0f9ff">Year 2</th><th style="width:20%; text-align:right; font-weight:600; color:#f0f9ff">Year 3</th></tr>
+      <!-- Recurring lines: customers signed evenly through the year, so revenue = average of opening and closing year-end count × driver price (assumptions slide). -->
+      <!-- Year-end paying count 3 / 10 / 25 split as licensed vendors 1 / 5 / 9 plus operators on usage 2 / 5 / 16. -->
+      <!-- Licences £40k: Y1 only the first, signed about month 9 (roadmap months 7-12), 3 months = £0.01m; Y2 (1+5)/2 = 3; Y3 (5+9)/2 = 7. -->
+      <tr><td>Embedded SDK licences (vendors)</td><td style="text-align:right">£0.01m</td><td style="text-align:right">£0.12m</td><td style="text-align:right">£0.28m</td></tr>
+      <!-- Usage £6k a month = £72k a year per operator: Y1 the API is in beta from months 7-12, so 2 operators for about 1.5 months = £0.02m; Y2 (2+5)/2 = 3.5; Y3 (5+16)/2 = 10.5. -->
+      <tr style="background:#0b2a4d"><td>Swarm Planning API usage</td><td style="text-align:right">£0.02m</td><td style="text-align:right">£0.25m</td><td style="text-align:right">£0.76m</td></tr>
+      <!-- Projects £150k: about 3, 5 and 6 a year; CEO figures kept, within one project of the driver. -->
+      <tr><td>Integration and pilot projects</td><td style="text-align:right">£0.50m</td><td style="text-align:right">£0.70m</td><td style="text-align:right">£0.90m</td></tr>
+      <!-- Channel: no per-aircraft price on the assumptions slide, so unverifiable; CEO figures kept. Label matches the model slide. -->
+      <tr style="background:#0b2a4d"><td>Aircraft and platform partners</td><td style="text-align:right">£0.05m</td><td style="text-align:right">£0.25m</td><td style="text-align:right">£0.70m</td></tr>
+      <tr style="background:#0f3560"><td style="color:#f0f9ff">Total revenue</td><td style="text-align:right; color:#f0f9ff">£0.58m</td><td style="text-align:right; color:#f0f9ff">£1.32m</td><td style="text-align:right; color:#f0f9ff">£2.64m</td></tr>
+      <tr><td>Paying vendors and operators, year end</td><td style="text-align:right">3</td><td style="text-align:right">10</td><td style="text-align:right">25</td></tr>
+      <tr style="background:#0b2a4d"><td>Headcount, year end</td><td style="text-align:right">8</td><td style="text-align:right">12</td><td style="text-align:right">18</td></tr>
+    </table>
+    <div style="width:520px; display:flex; flex-direction:column; gap:16px">
+      <p style="font-size:24px; color:#bae6fd">Total revenue, £m</p>
+      <div style="display:flex; gap:32px; align-items:end; height:360px">
+        <div style="flex:1; display:flex; flex-direction:column; gap:8px; align-items:center; justify-content:end">
+          <!-- Bar heights: 300px = £2.64m, linear. -->
+          <p style="font-size:26px; color:#f0f9ff">0.58</p>
+          <div style="width:120px; height:66px; background:#1e4976; border-radius:6px 6px 0 0"></div>
+        </div>
+        <div style="flex:1; display:flex; flex-direction:column; gap:8px; align-items:center; justify-content:end">
+          <p style="font-size:26px; color:#f0f9ff">1.32</p>
+          <div style="width:120px; height:150px; background:#0284c7; border-radius:6px 6px 0 0"></div>
+        </div>
+        <div style="flex:1; display:flex; flex-direction:column; gap:8px; align-items:center; justify-content:end">
+          <p style="font-size:26px; color:#f0f9ff">2.64</p>
+          <div style="width:120px; height:300px; background:#38bdf8; border-radius:6px 6px 0 0"></div>
+        </div>
+      </div>
+      <div style="display:flex; gap:32px; border-top:1px solid #1e4976; padding:12px 0 0 0">
+        <p style="flex:1; text-align:center; font-size:24px; color:#bae6fd">Year 1</p>
+        <p style="flex:1; text-align:center; font-size:24px; color:#bae6fd">Year 2</p>
+        <p style="flex:1; text-align:center; font-size:24px; color:#bae6fd">Year 3</p>
+      </div>
+    </div>
+  </div>
+  <p style="font-size:24px; line-height:1.4; color:#e0f2fe"><b>Judge the software line, not the total.</b> Value projects at zero, as an investor should: £0.08m in year one, £0.62m in year two, £1.74m in year three.</p>
+  <!-- Software line = licences + usage + partners, the table's own rows. -->
+  <p style="position:absolute; left:128px; bottom:64px; width:1664px; font-family:'Fira Code', 'Courier New', monospace; font-size:24px; color:#bae6fd">Hietanen Consultancy · FSharp.Azure.Quantum · 17 · Illustrative scenario; Year 1 = the twelve months after close; drivers on the next slide</p>
+  <aside>A scenario built from the drivers on the next slide, not a forecast with evidence behind it yet. Licences come first because a vendor is reachable now; usage becomes the largest software line in year three because it grows with their customers' fleets rather than with our sales team.
+
+How the lines are built
+— Recurring lines count customers signed evenly through the year: revenue is the average of the opening and closing count times the price.
+— Licences at £40k: one, five and nine vendors at year end — £0.01m, £0.12m and £0.28m; year one counts only the first licence, signed around month nine.
+— Usage at £6k a month: two, five and sixteen operators at year end — £0.02m, £0.25m and £0.76m; year one counts only the last weeks, once the API beta is live.
+— Projects at £150k: about three, five and six a year. Neither line depends on quantum advantage arriving on schedule.</aside>
+</section>

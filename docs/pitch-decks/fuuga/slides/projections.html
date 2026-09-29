@@ -1,0 +1,61 @@
+<section id="projections" data-transition="fade" style="background:#0c0a1c; color:#f1eefc; font-family:'IBM Plex Sans', Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:40px">
+  <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; letter-spacing:4px; text-transform:uppercase; color:#a78bfa">Financials · projections</p>
+  <h2 style="font-size:72px; font-weight:600; line-height:1.1; letter-spacing:-1px">Consulting and running the platform make the profit.</h2>
+  <div style="display:flex; gap:48px; align-items:end">
+    <table style="flex:1; font-size:26px; color:#ddd6f3; border:1px solid #2b2552; font-variant-numeric:tabular-nums">
+      <tr style="background:#1a1636"><th style="width:46%; text-align:left; font-weight:600; color:#f1eefc">Illustrative scenario</th><th style="width:18%; text-align:right; font-weight:600; color:#f1eefc">Year 1</th><th style="width:18%; text-align:right; font-weight:600; color:#f1eefc">Year 2</th><th style="width:18%; text-align:right; font-weight:600; color:#f1eefc">Year 3</th></tr>
+      <!-- Recurring lines: customers signed evenly through the year, so revenue = average of opening and closing year-end count × driver price (assumptions slide). -->
+      <!-- Engagements: no price driver on any slide; CEO figures kept as given. -->
+      <tr><td>Consulting engagements</td><td style="text-align:right">£0.60m</td><td style="text-align:right">£0.90m</td><td style="text-align:right">£1.20m</td></tr>
+      <!-- Paying organisations 4 / 12 / 35 at year end, assumed half run by us and half self-run: managed 2 / 6 / 17, continuity 2 / 6 / 18. -->
+      <!-- Managed operation £100k: Y1 (0+2)/2 = 1; Y2 (2+6)/2 = 4; Y3 (6+17)/2 = 11.5. -->
+      <tr style="background:#120f2a"><td>Managed operation — we run it</td><td style="text-align:right">£0.10m</td><td style="text-align:right">£0.40m</td><td style="text-align:right">£1.15m</td></tr>
+      <!-- Continuity £60k: Y1 (0+2)/2 = 1; Y2 (2+6)/2 = 4; Y3 (6+18)/2 = 12. -->
+      <tr><td>Continuity — they run it</td><td style="text-align:right">£0.06m</td><td style="text-align:right">£0.24m</td><td style="text-align:right">£0.72m</td></tr>
+      <!-- Partners £30k a year: Y2 (0+5)/2 = 2.5; Y3 (5+20)/2 = 12.5. -->
+      <tr style="background:#120f2a"><td>Partner enablement</td><td style="text-align:right">—</td><td style="text-align:right">£0.08m</td><td style="text-align:right">£0.38m</td></tr>
+      <!-- OEM licences and per-token hosting are long-term and carry no revenue here. -->
+      <tr style="background:#1a1636"><td style="color:#f1eefc">Total revenue</td><td style="text-align:right; color:#f1eefc">£0.76m</td><td style="text-align:right; color:#f1eefc">£1.62m</td><td style="text-align:right; color:#f1eefc">£3.45m</td></tr>
+      <tr><td>Paying organisations / partners</td><td style="text-align:right">4 / —</td><td style="text-align:right">12 / 5</td><td style="text-align:right">35 / 20</td></tr>
+    </table>
+    <div style="width:420px; display:flex; flex-direction:column; gap:12px">
+      <p style="font-size:24px; color:#a9a3c9">Total revenue, £m</p>
+      <div style="display:flex; gap:28px; align-items:end; height:300px">
+        <div style="flex:1; display:flex; flex-direction:column; gap:8px; align-items:center; justify-content:end">
+          <!-- Bar heights: 250px = £3.45m, linear. -->
+          <p style="font-size:26px; color:#f1eefc">0.76</p>
+          <div style="width:100px; height:55px; background:#2b2552; border-radius:6px 6px 0 0"></div>
+        </div>
+        <div style="flex:1; display:flex; flex-direction:column; gap:8px; align-items:center; justify-content:end">
+          <p style="font-size:26px; color:#f1eefc">1.62</p>
+          <div style="width:100px; height:117px; background:#7c6ad6; border-radius:6px 6px 0 0"></div>
+        </div>
+        <div style="flex:1; display:flex; flex-direction:column; gap:8px; align-items:center; justify-content:end">
+          <p style="font-size:26px; color:#f1eefc">3.45</p>
+          <div style="width:100px; height:250px; background:#a78bfa; border-radius:6px 6px 0 0"></div>
+        </div>
+      </div>
+      <div style="display:flex; gap:28px; border-top:1px solid #2b2552; padding:12px 0 0 0">
+        <p style="flex:1; text-align:center; font-size:24px; color:#a9a3c9">Year 1</p>
+        <p style="flex:1; text-align:center; font-size:24px; color:#a9a3c9">Year 2</p>
+        <p style="flex:1; text-align:center; font-size:24px; color:#a9a3c9">Year 3</p>
+      </div>
+    </div>
+  </div>
+  <p style="position:absolute; left:128px; bottom:64px; width:1664px; font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; color:#a9a3c9">Hietanen Consultancy · Fuuga · 18 · Illustrative scenario; Year 1 = the twelve months after close; drivers on the next slide</p>
+  <aside>A scenario built from the drivers on the next slide, not a forecast with evidence behind it yet.
+
+Where the profit is
+— Consulting earns about 45% gross margin, running the platform about 60%, continuity and partner revenue about 80%.
+— Consulting and managed operation together are 87%, 72% and 58% of gross profit in years one to three. Support and partners grow underneath, but the people who build and run the engines are the business.
+— OEM licences and per-token hosting are long-term doors, not in these numbers.
+
+How the lines are built
+— Recurring lines count customers signed evenly through the year: revenue is the average of the opening and closing count times the price.
+— Paying organisations at year end: four, twelve and thirty-five, assumed half run by us and half running it themselves.
+— Managed operation at £100k: two, six and seventeen organisations — £0.10m, £0.40m and £1.15m.
+— Continuity at £60k: two, six and eighteen organisations — £0.06m, £0.24m and £0.72m.
+— Partners at £30k: five in year two and twenty in year three — £0.08m and £0.38m.
+— Thirty-five organisations is about 4% of the roughly 900 on the market slide.
+— Headcount at year end: 8, 12 and 18.</aside>
+</section>

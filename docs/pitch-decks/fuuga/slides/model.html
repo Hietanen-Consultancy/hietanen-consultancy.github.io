@@ -1,0 +1,43 @@
+<section id="model" data-transition="fade" style="background:#0c0a1c; color:#f1eefc; font-family:'IBM Plex Sans', Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:48px">
+  <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; letter-spacing:4px; text-transform:uppercase; color:#a78bfa">Business model</p>
+  <h2 style="font-size:72px; font-weight:600; line-height:1.1; letter-spacing:-1px">The tool is free. We build the engine, run it, or back the team that does.</h2>
+  <div style="display:flex; gap:24px">
+    <div style="flex:1; display:flex; flex-direction:column; gap:14px; background:#120f2a; padding:32px; border:1px solid #2b2552; border-radius:16px">
+      <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; color:#a78bfa">01 · Consulting</p>
+      <h3 style="font-size:32px; font-weight:600; line-height:1.2">Decision engagements</h3>
+      <p style="font-size:28px; line-height:1.4; color:#a9a3c9">A calibrated engine in production, trained on the customer's own outcomes.</p>
+    </div>
+    <div style="flex:1; display:flex; flex-direction:column; gap:14px; background:#120f2a; padding:32px; border:1px solid #a78bfa; border-radius:16px">
+      <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; color:#a78bfa">02 · We run it</p>
+      <h3 style="font-size:32px; font-weight:600; line-height:1.2">£100k a year</h3>
+      <p style="font-size:28px; line-height:1.4; color:#a9a3c9">We operate it in their environment: retraining, drift, evidence, on-call.</p>
+    </div>
+    <div style="flex:1; display:flex; flex-direction:column; gap:14px; background:#120f2a; padding:32px; border:1px solid #2b2552; border-radius:16px">
+      <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; color:#a78bfa">03 · They run it</p>
+      <h3 style="font-size:32px; font-weight:600; line-height:1.2">£60k a year</h3>
+      <p style="font-size:28px; line-height:1.4; color:#a9a3c9">Signed builds, SLA, provenance — and onboarding each new engineer.</p>
+    </div>
+    <div style="flex:1; display:flex; flex-direction:column; gap:14px; background:#120f2a; padding:32px; border:1px solid #2b2552; border-radius:16px">
+      <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; color:#a78bfa">04 · Partners</p>
+      <h3 style="font-size:32px; font-weight:600; line-height:1.2">Certified implementers</h3>
+      <p style="font-size:28px; line-height:1.4; color:#a9a3c9">They deliver and resell our support; we are the escalation.</p>
+    </div>
+  </div>
+  <p style="font-size:30px; line-height:1.4; color:#ddd6f3"><b>Long term, not in the numbers:</b> vendors embedding Fuuga, and customers selling their model per token.</p>
+  <!-- £100k managed operation: one engineer at the £110k fully loaded driver runs about three customers' engines, ~£37k each plus ~£3k infrastructure and on-call, so ~60% gross margin. Estimate; no public price for this service. -->
+  <p style="position:absolute; left:128px; bottom:64px; width:1664px; font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; color:#a9a3c9">Hietanen Consultancy · Fuuga · 09 · Consulting ~45% gross margin; running it ~60%; continuity and partners ~80%</p>
+  <aside>The order is the argument: consulting builds the engine and the evidence, running it for the customer is where the profit sits, continuity serves the customers who run it themselves, and partners break the headcount ceiling. OEM and per-token hosting are long-term doors.
+
+Detail
+— Consulting: fixed scope on outcomes the customer already records, ending with a calibrated engine in production. Profitable today, and the source of every model, recipe and measured number.
+— We run it: most regulated buyers have no model team and do not want one. We operate the engine inside their environment — retraining on new outcomes, drift monitoring, the evidence pack their supervisor asks for, and somebody on call. It extends the platform engineering we already do for FX and lending clients, and it renews because the model has to keep working.
+— They run it: for a customer with its own team, signed builds, long-term support branches, advisories, an SLA and the provenance record. It renews because a team trained in year one is roughly half-replaced by year three at normal tenure.
+— Partners: other consultancies implement Fuuga; we train and certify them, and they escalate to us. Delivery grows without our headcount.
+— Long term: a vendor shipping Fuuga inside its product (an OEM licence), and fuuga-serve's per-token pricing with a prepaid credit ledger per API key, in the format OpenRouter uses. Both are shipped or possible today; neither is in the projections.
+— A proprietary licence would protect the smallest line of revenue by killing the ecosystem that grows the others.
+
+Common questions
+— "Doesn't open source mean anyone can consult on this?" Yes, and at scale that is the point: implementers are distribution. We are upstream, we set the release branches, and we are the escalation when a partner cannot diagnose something.
+— "Who pays for the GPUs?" Training runs on the customer's own hardware or cloud by default, so compute never sits on our margin.
+— An analogy: timber is cheap compared with a joiner who knows which cut holds. A capable toolchain in unpractised hands produces a miscalibrated model that looks fine until it is audited; the judgement — which data mixture, which threshold, which quantisation survived — is not in the repository.</aside>
+</section>
