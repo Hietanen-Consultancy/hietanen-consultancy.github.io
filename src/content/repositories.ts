@@ -57,7 +57,7 @@ export const repositories = {
     source: "https://bitbucket.org/Thorium/fuuga",
     deepDive: {
       to: "/projects/fuuga/",
-      detail: "Train, fine-tune and serve your own language models on .NET",
+      detail: "Retrain open-source language models on your own data, on .NET",
     },
   },
   fsharpAzureQuantum: {
@@ -66,7 +66,7 @@ export const repositories = {
     href: "https://github.com/Thorium/FSharp.Azure.Quantum",
     deepDive: {
       to: "/projects/quantum/",
-      detail: "Quantum optimisation, shown through drone swarm coordination",
+      detail: "High-level quantum optimisation, shown through drone swarm coordination",
     },
   },
   clearBankNet: {
