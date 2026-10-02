@@ -26,7 +26,8 @@ type Source = {
   variants?: Record<string, { assets?: Record<string, string> }>;
 };
 
-const [name, variantName, outFile] = process.argv.slice(2);
+const args = process.argv.slice(2);
+const [name, variantName, outFile] = args.length === 2 ? [args[0], undefined, args[1]] : args;
 if (!name || !outFile) {
   console.error("usage: node scripts/pitch-deck-pdf.ts <deck> [variant] <out.pdf>");
   process.exit(2);
@@ -102,18 +103,23 @@ const shape = (_: string, kind: string, style: string) => {
   return `<span style="${style}; display:block; border-radius:${radius}"></span>`;
 };
 
-// The PDF is public, so the founder's address the bundle carries gives way to
-// the site's contact mailbox (src/content/company.ts), as on every web page.
+// A PDF written under public/ is published with the site, so the founder's
+// address the bundle carries gives way to the site's contact mailbox
+// (src/content/company.ts), as on every web page. A PDF written anywhere else
+// is handed to a person and keeps the founder's address, as the deck viewer does.
 const companySource = await readFile(path.resolve("src/content/company.ts"), "utf8");
 const publicContact = /contact:\s*"mailto:([^"]+)"/.exec(companySource)?.[1];
 if (!publicContact) throw new Error("no contact mailbox in src/content/company.ts");
 const founderEmail = ["tuo", "mas", "@", "hietanen.co.uk"].join("");
+const underPublic = path.relative(path.resolve("public"), path.resolve(outFile));
+const published = !underPublic.startsWith("..") && !path.isAbsolute(underPublic);
+const contact = published ? publicContact : founderEmail;
 
 const slides: string[] = [];
 for (const id of index.order) {
   let html = await readFile(path.join(built, "slides", `${id}.html`), "utf8");
   html = html
-    .replaceAll(founderEmail, publicContact)
+    .replaceAll(founderEmail, contact)
     .replace(/<aside>[\s\S]*?<\/aside>/g, "")
     .replace(/<x-icon name="([^"]+)" style="([^"]*)"><\/x-icon>/g, icon)
     .replace(/<x-shape kind="([^"]+)" style="([^"]*)"><\/x-shape>/g, shape)

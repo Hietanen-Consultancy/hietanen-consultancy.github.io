@@ -241,8 +241,9 @@ function FuugaPage() {
             </h2>
             <p className="mt-4 max-w-2xl text-sm leading-6 text-[#a9a3c9]">
               Enterprises rent their AI and cannot maintain the AI they build. The regulated
-              back-offices of the world run on .NET, and the only AI path offered to them is rented:
-              Copilot and Azure OpenAI, running OpenAI and Anthropic models in someone else's cloud.
+              back-offices of the world run on .NET, and the AI path Microsoft offers them is
+              rented: Copilot and Azure OpenAI, running OpenAI and Anthropic models in someone
+              else's cloud.
             </p>
             <div className="mt-8 grid gap-px overflow-hidden rounded-lg border border-[#2b2552] bg-[#2b2552] sm:grid-cols-3">
               {problems.map(([title, copy]) => (

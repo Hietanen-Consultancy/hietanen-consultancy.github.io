@@ -1,31 +1,33 @@
-<section id="whynow" data-transition="fade" style="background:#38bdf8; color:#061a33; font-family:Rubik, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:32px">
+<section id="whynow" data-transition="fade" style="background:#38bdf8; color:#061a33; font-family:Rubik, Arial, sans-serif; padding:128px 128px 160px; display:flex; flex-direction:column; gap:40px">
   <p style="font-family:'Fira Code', 'Courier New', monospace; font-size:24px; letter-spacing:4px; text-transform:uppercase; color:#0b2a4d">Why now</p>
   <h2 style="font-size:72px; font-weight:600; line-height:1.1; letter-spacing:-1px">The rules already allow swarms. The software is what is missing.</h2>
   <div style="display:flex; gap:28px">
     <div style="flex:1; display:flex; flex-direction:column; gap:14px; border-top:4px solid #061a33; padding:28px 0 0 0">
       <h3 style="font-size:30px; font-weight:600; line-height:1.2">One pilot, many aircraft, already lawful</h3>
-      <p style="font-size:24px; line-height:1.4; color:#0b2a4d">An EASA operational authorisation records a remote-pilot-to-aircraft ratio — 1:5, or a pool of three pilots to ten aircraft. The cap comes from the automation the aircraft's flight manual documents, not from a rule still to be written.</p>
+      <p style="font-size:26px; line-height:1.4; color:#0b2a4d">An EASA authorisation records a pilot-to-aircraft ratio: 1:5, or three pilots to ten aircraft.</p>
     </div>
     <div style="flex:1; display:flex; flex-direction:column; gap:14px; border-top:4px solid #061a33; padding:28px 0 0 0">
-      <h3 style="font-size:30px; font-weight:600; line-height:1.2">Deployment, not legislation, is the bottleneck</h3>
-      <p style="font-size:24px; line-height:1.4; color:#0b2a4d">UK BVLOS flies today in atypical air environments — rail, power-line and wind-farm corridors — under a handful of authorisations. Since the EU's U-space rules applied in 2023, one U-space airspace is live.</p>
+      <h3 style="font-size:30px; font-weight:600; line-height:1.2">Deployment is the bottleneck</h3>
+      <p style="font-size:26px; line-height:1.4; color:#0b2a4d">UK BVLOS flies today in rail, power-line and wind-farm corridors. One U-space airspace is live in the EU.</p>
     </div>
     <div style="flex:1; display:flex; flex-direction:column; gap:14px; border-top:4px solid #061a33; padding:28px 0 0 0">
       <h3 style="font-size:30px; font-weight:600; line-height:1.2">Quantum hardware is on the cloud</h3>
-      <p style="font-size:24px; line-height:1.4; color:#0b2a4d">Azure Quantum sells IonQ, Pasqal, Quantinuum and Rigetti time; D-Wave annealers handle thousands of variables; Microsoft is building the Majorana machine we already simulate.</p>
+      <p style="font-size:26px; line-height:1.4; color:#0b2a4d">Azure Quantum, Braket and D-Wave sell machine time today.</p>
     </div>
     <div style="flex:1; display:flex; flex-direction:column; gap:14px; border-top:4px solid #061a33; padding:28px 0 0 0">
       <h3 style="font-size:30px; font-weight:600; line-height:1.2">AI agents need a typed API</h3>
-      <p style="font-size:24px; line-height:1.4; color:#0b2a4d">Coding agents can write a builder expression; they cannot invent a QUBO encoding. A high-level, typed library is how quantum reaches the code that agents will write.</p>
+      <p style="font-size:26px; line-height:1.4; color:#0b2a4d">Agents can write a builder expression; they cannot invent a QUBO encoding.</p>
     </div>
   </div>
-  <p style="font-size:26px; line-height:1.4; color:#0b2a4d">So the developer layer arrives <b>before</b> the fleets — which is the only time it can be built, and the reason the buyer today is the vendor shipping the fleet software rather than the operator flying it. The revenue does not wait for quantum: what a customer buys is fleet planning that works now on classical hardware, with the quantum path wired behind the same API.</p>
-  <p style="position:absolute; left:128px; bottom:64px; width:1664px; font-family:'Fira Code', 'Courier New', monospace; font-size:24px; color:#0b2a4d">Hietanen Consultancy · FSharp.Azure.Quantum · 07 · Sources: EASA operational authorisation guidance; UK CAA atypical air environment policy</p>
+  <p style="font-size:30px; line-height:1.4; color:#061a33"><b>One timing argument:</b> the rules, the hardware and the agents are here before the fleets are. That is the window to build the planning layer, and it sells today on classical hardware with the quantum path behind the same API.</p>
+  <p style="position:absolute; left:128px; bottom:64px; width:1664px; font-family:'Fira Code', 'Courier New', monospace; font-size:24px; color:#0b2a4d">Hietanen Consultancy · FSharp.Azure.Quantum · 07 · Sources: EASA authorisation guidance; UK CAA AAE policy</p>
   <aside>Permission exists; deployment does not. The tooling has to be ready first, which is the window this company is in.
 
 Detail
-— The benchmark is a commitment: we will publish the problem size at which the hybrid planner beats a classical baseline, and the claim arrives with the table rather than ahead of it.
-
-Scope
-— U-space has not unlocked this market. One U-space airspace (San Salvo, Italy) has been designated since the rules applied in January 2023, and the honest reading — permission without deployment — is the stronger one.</aside>
+— Permission: an EASA operational authorisation records a remote-pilot-to-aircraft ratio. The cap comes from the automation the aircraft's flight manual documents, not from a rule still to be written.
+— Deployment: UK BVLOS flies in atypical air environments (AAE) under a handful of authorisations. Since the EU's U-space rules applied in January 2023, one U-space airspace has been designated (San Salvo, Italy). Permission without deployment is the honest reading, and the stronger one.
+— Hardware: Azure Quantum sells IonQ, Pasqal, Quantinuum and Rigetti time, D-Wave annealers handle thousands of variables, and Microsoft is building the Majorana machine the library already simulates.
+— Agents: a high-level, typed library is how quantum reaches the code that agents will write.
+— The buyer: the developer layer arrives before the fleets, which is the only time it can be built, and the reason the buyer today is the vendor shipping the fleet software rather than the operator flying it.
+— The benchmark is a commitment: we will publish the problem size at which the hybrid planner beats a classical baseline, and the claim arrives with the table rather than ahead of it.</aside>
 </section>

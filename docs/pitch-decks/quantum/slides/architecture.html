@@ -27,11 +27,19 @@
         </div>
       </div>
     </div>
-    <div style="width:480px; display:flex; flex-direction:column; gap:20px; background:#061a33; padding:20px; border:1px solid #1e4976; border-radius:16px">
-      <h3 style="font-size:32px; font-weight:600; line-height:1.2">Quantum-first, honestly</h3>
-      <p style="font-size:26px; line-height:1.4; color:#bae6fd">A quantum solver never silently hands back a classical answer: if the hardware cannot solve it, the caller gets an error, not a disguise. HybridSolver routes to a classical baseline only when asked.</p>
+    <div style="width:480px; display:flex; flex-direction:column; gap:20px">
+      <div style="display:flex; flex-direction:column; gap:14px; background:#061a33; padding:20px; border:1px solid #38bdf8; border-radius:16px">
+        <h3 style="font-size:32px; font-weight:600; line-height:1.2">What an integrator writes</h3>
+        <p style="font-size:26px; line-height:1.4; color:#bae6fd">One builder, in F# or C#. The backend is an argument: a laptop simulator today, an annealer or a QPU later, with no rewrite.</p>
+      </div>
+      <div style="display:flex; flex-direction:column; gap:14px; background:#061a33; padding:20px; border:1px solid #1e4976; border-radius:16px">
+        <h3 style="font-size:32px; font-weight:600; line-height:1.2">Quantum-first, honestly</h3>
+        <p style="font-size:26px; line-height:1.4; color:#bae6fd">A quantum solver never silently hands back a classical answer: if the hardware cannot solve it, the caller gets an error. HybridSolver routes to a classical baseline only when asked.</p>
+      </div>
     </div>
   </div>
   <p style="position:absolute; left:128px; bottom:64px; width:1664px; font-family:'Fira Code', 'Courier New', monospace; font-size:24px; color:#bae6fd">Hietanen Consultancy · FSharp.Azure.Quantum · 04</p>
-  <aside>The honesty box is commercial rather than decorative: a buyer or investor who has seen quantum vapourware will test exactly this. The design rule — no silent classical fallback — is in the README and enforced in the tests.</aside>
+  <aside>The integrator box is the effort argument: the plan is written once, in the language the vendor's developers already use, and moving it from a simulator to an annealer or a QPU changes one argument.
+
+The honesty box is commercial rather than decorative: a buyer or investor who has seen quantum vapourware will test exactly this. The design rule — no silent classical fallback — is in the README and enforced in the tests.</aside>
 </section>
