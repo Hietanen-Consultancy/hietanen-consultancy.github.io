@@ -115,15 +115,9 @@ export const fit: readonly string[] = [
   "You are integrating payments, banking, KYC, credit, FX or regulatory reporting.",
   "You are putting AI, language models or agents into production and want someone who has run them there.",
   "You are investing in or acquiring a company and need an independent technical view of it.",
+  "You are a founder with a new business idea; you have sparred with an AI chatbot, and now you need the real product built.",
 ];
 
-// Said plainly, because it saves both sides a conversation.
-export const notFit: readonly string[] = [
-  "a large offshore delivery team",
-  "a commodity website or app build",
-  "the lowest day rate",
-  "a project run entirely through requirements hand-off, with nobody on your side to talk to",
-];
 export const fitSummary =
   "We fit best when the system is technically difficult, commercially important, or both.";
 
@@ -163,7 +157,7 @@ export const engagementGuide: readonly EngagementGuideRow[] = [
 export const engagementProcess: readonly ProcessStep[] = [
   {
     title: "A conversation",
-    copy: "On the system, the problem and the constraints, for as long as it takes to understand them. Nothing to prepare on your side.",
+    copy: "Email first, then a call about the system, the problem and the constraints. Nothing to prepare on your side.",
   },
   {
     title: "Technical discovery",

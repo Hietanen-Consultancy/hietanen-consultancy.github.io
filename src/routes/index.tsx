@@ -1,5 +1,5 @@
 import { Link, createFileRoute } from "@tanstack/react-router";
-import { ArrowLeft, ArrowRight, ChevronDown, ExternalLink, Mail, Menu } from "lucide-react";
+import { ArrowLeft, ArrowRight, Check, ChevronDown, ExternalLink, Mail, Menu } from "lucide-react";
 import { Fragment, useRef, useState } from "react";
 
 import collaborationImage from "@/assets/hietanen-client-collaboration-tuomas.jpg";
@@ -17,7 +17,6 @@ import {
   engagements,
   fit,
   fitSummary,
-  notFit,
   engagementProcess,
   services,
   why,
@@ -218,7 +217,7 @@ function Index() {
             <div className="mt-8 flex animate-rise flex-col gap-3 sm:flex-row [animation-delay:240ms]">
               <Button asChild>
                 <a href="#contact">
-                  Discuss your system <ArrowRight className="size-4" />
+                  Describe the problem <ArrowRight className="size-4" />
                 </a>
               </Button>
               <Button asChild variant="outline">
@@ -264,37 +263,19 @@ function Index() {
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <div className="max-w-3xl">
             <p className="font-mono text-xs uppercase text-primary">01 / Who we help</p>
-            <h2 className="mt-4 text-3xl font-extrabold sm:text-5xl">
-              You are probably in the right place if…
+            <h2 className="mt-4 text-3xl font-extrabold sm:text-4xl">
+              Does any of this sound familiar?
             </h2>
+            <p className="mt-5 text-sm font-semibold leading-6 text-foreground">{fitSummary}</p>
           </div>
-          <div className="mt-10 grid gap-10 lg:grid-cols-12">
-            <ul className="grid gap-3 lg:col-span-7">
-              {fit.map((line) => (
-                <li key={line} className="flex gap-3 leading-7">
-                  <ArrowRight className="mt-1.5 size-4 shrink-0 text-primary" aria-hidden="true" />
-                  <span>{line}</span>
-                </li>
-              ))}
-            </ul>
-            <div className="rounded-lg border border-border bg-surface p-6 lg:col-span-5 sm:p-7">
-              <p className="font-mono text-[10px] uppercase text-muted-foreground">
-                Probably not a fit if you need
-              </p>
-              <ul className="mt-4 grid gap-2 text-sm leading-6 text-muted-foreground">
-                {notFit.map((line) => (
-                  <li key={line} className="flex gap-3">
-                    <span
-                      className="mt-2.5 size-1.5 shrink-0 rounded-full bg-border"
-                      aria-hidden="true"
-                    />
-                    <span>{line}</span>
-                  </li>
-                ))}
-              </ul>
-              <p className="mt-5 text-sm font-semibold leading-6 text-foreground">{fitSummary}</p>
-            </div>
-          </div>
+          <ul className="mt-10 grid gap-3 sm:grid-cols-2">
+            {fit.map((line) => (
+              <li key={line} className="flex gap-3 rounded-lg border border-border bg-surface p-5">
+                <Check className="mt-1 size-4 shrink-0 text-primary" aria-hidden="true" />
+                <span className="text-sm leading-6 sm:text-base">{line}</span>
+              </li>
+            ))}
+          </ul>
           <div className="mt-16 max-w-3xl">
             <p className="font-mono text-xs uppercase text-primary">Why Hietanen</p>
             <h3 className="mt-4 text-2xl font-extrabold sm:text-3xl">
@@ -323,7 +304,7 @@ function Index() {
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <div className="max-w-3xl">
             <p className="font-mono text-xs uppercase text-signal">02 / Expertise</p>
-            <h2 className="mt-4 text-3xl font-extrabold sm:text-5xl">
+            <h2 className="mt-4 text-3xl font-extrabold sm:text-4xl">
               Strategy that reaches production.
             </h2>
             <p className="mt-4 leading-7 text-background/65">
@@ -357,8 +338,8 @@ function Index() {
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <div className="max-w-3xl">
             <p className="font-mono text-xs uppercase text-primary">03 / How we work</p>
-            <h2 className="mt-4 text-3xl font-extrabold sm:text-5xl">
-              Senior engineer(s), embedded where the work is.
+            <h2 className="mt-4 text-3xl font-extrabold sm:text-4xl">
+              Embedded where the work is.
             </h2>
             <p className="mt-4 max-w-2xl leading-7 text-muted-foreground">
               Most of our work is straightforward: an experienced engineer, or several, joins your
@@ -369,7 +350,9 @@ function Index() {
           <div className="mt-10 overflow-hidden rounded-lg border border-border">
             <table className="w-full text-left text-sm">
               <caption className="sr-only">Which engagement fits which situation</caption>
-              <thead className="bg-surface-strong/60 font-mono text-[10px] uppercase text-muted-foreground">
+              {/* On phones the two columns get crushed, so each row stacks:
+                  the quote on top, the engagement below with its own label. */}
+              <thead className="hidden bg-surface-strong/60 font-mono text-[10px] uppercase text-muted-foreground sm:table-header-group">
                 <tr>
                   <th scope="col" className="px-5 py-3 font-medium">
                     Your situation
@@ -381,9 +364,12 @@ function Index() {
               </thead>
               <tbody>
                 {engagementGuide.map(([situation, engagement]) => (
-                  <tr key={situation} className="border-t border-border">
-                    <td className="px-5 py-3 leading-6">“{situation}”</td>
-                    <td className="px-5 py-3 font-semibold leading-6 text-foreground">
+                  <tr key={situation} className="block border-t border-border sm:table-row">
+                    <td className="block px-5 py-3 leading-6 sm:table-cell">“{situation}”</td>
+                    <td className="block border-t border-border/60 px-5 py-3 font-semibold leading-6 text-foreground sm:table-cell sm:border-t-0">
+                      <span className="mb-1 block font-mono text-[10px] font-medium uppercase text-muted-foreground sm:hidden">
+                        Engagement
+                      </span>
                       {engagement}
                     </td>
                   </tr>
@@ -564,11 +550,9 @@ function Index() {
       <section id="templates" className="border-y border-border bg-surface-strong/60 py-20">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <div className="grid gap-10 lg:grid-cols-12">
-            <div className="lg:col-span-4">
+            <div className="self-start lg:col-span-4 lg:sticky lg:top-24">
               <p className="font-mono text-xs uppercase text-primary">05 / Blueprints</p>
-              <h2 className="mt-4 text-3xl font-extrabold sm:text-4xl">
-                Start from a working template.
-              </h2>
+              <h2 className="mt-4 text-3xl font-extrabold">Start from a template.</h2>
               <p className="mt-4 leading-7 text-muted-foreground">
                 Every engagement can begin from a proven public repository: a running first
                 implementation to build on, not a slide deck or a black box.
@@ -790,9 +774,7 @@ function Index() {
           <div className="grid gap-10 lg:grid-cols-12">
             <div className="lg:col-span-4">
               <p className="font-mono text-xs uppercase text-primary">07 / Customers</p>
-              <h2 className="mt-4 text-3xl font-extrabold sm:text-4xl">
-                Trusted where the stakes are high.
-              </h2>
+              <h2 className="mt-4 text-3xl font-extrabold">Trusted at high stakes.</h2>
               <p className="mt-4 leading-7 text-muted-foreground">
                 Organisations we have delivered for since 2000, directly and through employers and
                 partners: regulated lending in the UK (Fund Ourselves) and the US (WeLendUs), FX
@@ -947,31 +929,31 @@ function Index() {
           <div className="absolute -right-24 -top-24 size-72 rounded-full bg-primary/15 blur-3xl" />
           <div className="relative max-w-3xl">
             <p className="font-mono text-xs uppercase text-primary">09 / Contact</p>
-            <h2 className="mt-4 text-3xl font-extrabold sm:text-5xl">
+            <h2 className="mt-4 text-3xl font-extrabold sm:text-4xl">
               Bring the difficult system problem.
             </h2>
             <p className="mt-5 max-w-2xl leading-7 text-muted-foreground">
-              Tell us what you are dealing with, and we will say plainly whether we can help. Three
-              ways in, depending on how far along you are.
+              It starts with an email. Say what you are dealing with; the reply comes from the
+              engineer who would do the work.
             </p>
             <div className="mt-8 grid gap-3 sm:grid-cols-3">
               {[
                 {
-                  label: "Discuss your system",
-                  copy: "A conversation about the problem you are facing, for as long as it needs.",
-                  href: `mailto:${company.email}?subject=${encodeURIComponent("Discuss our system")}`,
+                  label: "Describe the problem",
+                  copy: "The system, what it does, and what is wrong or has to change. Rough notes are fine.",
+                  href: `mailto:${company.email}?subject=${encodeURIComponent("Our system")}`,
                   primary: true,
                 },
                 {
-                  label: "Request an assessment",
-                  copy: "You already know there is a problem and want a written view of it.",
+                  label: "Ask for a written assessment",
+                  copy: "A fixed-scope review of architecture, code or infrastructure, findings in writing. Scoped and priced after your email.",
                   href: `mailto:${company.email}?subject=${encodeURIComponent("Technical assessment")}`,
                   primary: false,
                 },
                 {
-                  label: "See the work first",
-                  copy: "Reference projects, open source and blueprints, for when you are still researching.",
-                  href: "#references",
+                  label: "Ask about availability",
+                  copy: "Start dates, day rates and retainer terms; direct or through an agency framework, inside or outside IR35.",
+                  href: `mailto:${company.email}?subject=${encodeURIComponent("Availability and rates")}`,
                   primary: false,
                 },
               ].map((option) => (
@@ -1006,7 +988,7 @@ function Index() {
               </span>
               <span className="min-w-0">
                 <span className="block font-mono text-[10px] uppercase text-primary">
-                  Or email directly
+                  Anything else
                 </span>
                 <span className="mt-1 block text-lg font-bold">Tuomas Hietanen</span>
                 <span className="block text-sm text-muted-foreground">

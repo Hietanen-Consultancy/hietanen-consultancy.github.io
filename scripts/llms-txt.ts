@@ -33,7 +33,6 @@ const {
   engagements,
   fit,
   fitSummary,
-  notFit,
   engagementProcess,
   productList,
   services,
@@ -83,7 +82,7 @@ h(2, "Who we help");
 p("The consultancy is probably the right call if:");
 for (const line of fit) li(line);
 lines.push("");
-p(`It is probably not a fit for a buyer who needs ${notFit.join("; ")}. ${fitSummary}`);
+p(fitSummary);
 
 h(2, "Why Hietanen");
 p("Three things that are normally bought separately, from the same people.");

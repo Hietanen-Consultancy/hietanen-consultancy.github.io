@@ -162,6 +162,13 @@
        break the sticky page headers. */
     overflow-x: hidden;
   }
+
+  /* In-page anchors stop just below the sticky page header instead of
+     hiding the section heading underneath it. */
+  section[id] {
+    scroll-margin-top: 5.5rem;
+  }
+
   a {
     text-underline-offset: 0.2em;
   }
