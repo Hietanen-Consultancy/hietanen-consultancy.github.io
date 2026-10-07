@@ -26,8 +26,19 @@ registerHooks({
   },
 });
 
-const { career, company, engagements, productList, services } =
-  await import("../src/content/company.ts");
+const {
+  career,
+  company,
+  engagementGuide,
+  engagements,
+  fit,
+  fitSummary,
+  notFit,
+  engagementProcess,
+  productList,
+  services,
+  why,
+} = await import("../src/content/company.ts");
 const { customerGroups } = await import("../src/content/customers.ts");
 const { referenceProjects } = await import("../src/content/references.ts");
 const { integrationGroups } = await import("../src/content/integrations.ts");
@@ -68,10 +79,27 @@ h(2, "Services");
 for (const service of services)
   li(`**${service.title}**: ${service.copy} (${service.tags.join(", ")})`);
 
+h(2, "Who we help");
+p("The consultancy is probably the right call if:");
+for (const line of fit) li(line);
+lines.push("");
+p(`It is probably not a fit for a buyer who needs ${notFit.join("; ")}. ${fitSummary}`);
+
+h(2, "Why Hietanen");
+p("Three things that are normally bought separately, from the same people.");
+for (const reason of why) li(`**${reason.title}**: ${reason.copy}`);
+
+h(2, "Choosing an engagement");
+for (const [situation, engagement] of engagementGuide) li(`"${situation}" → ${engagement}`);
+
 h(2, "Engagement models");
 for (const item of engagements) li(`**${item.title}** — ${item.model}: ${item.copy}`);
 lines.push("");
 p(company.terms);
+p(company.onSite);
+
+h(2, "What happens after you get in touch");
+engagementProcess.forEach((step, i) => li(`${i + 1}. **${step.title}**: ${step.copy}`));
 
 h(2, "Products");
 for (const id of deepDives) {
@@ -138,7 +166,7 @@ li(`LinkedIn: ${company.founder.linkedIn}`);
 li(`GitHub: ${company.github}`);
 li(`Bitbucket: ${company.bitbucket}`);
 li(
-  `Registered in England and Wales, company no. ${company.companyNumber}; ${company.city}, working internationally.`,
+  `Registered in England and Wales, company no. ${company.companyNumber}; based in ${company.city} ${company.postcodeArea}, working internationally.`,
 );
 lines.push("");
 

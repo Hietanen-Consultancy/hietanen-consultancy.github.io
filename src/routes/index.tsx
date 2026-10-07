@@ -10,7 +10,18 @@ import { BitbucketIcon, GitHubIcon, LinkedInIcon } from "@/components/brand-icon
 import { Button } from "@/components/ui/button";
 import { useScrollEdges } from "@/hooks/use-scroll-edges";
 import { organizationJsonLd, repositoriesJsonLd, seoHead } from "@/lib/site";
-import { career, company, engagements, services } from "@/content/company";
+import {
+  career,
+  company,
+  engagementGuide,
+  engagements,
+  fit,
+  fitSummary,
+  notFit,
+  engagementProcess,
+  services,
+  why,
+} from "@/content/company";
 import { customerGroups } from "@/content/customers";
 import { integrationGroups } from "@/content/integrations";
 import { referenceProjects } from "@/content/references";
@@ -123,6 +134,9 @@ function Index() {
             className="hidden items-center gap-7 text-sm font-medium text-muted-foreground md:flex"
             aria-label="Main navigation"
           >
+            <a href="#fit" className="transition-colors hover:text-foreground">
+              Who we help
+            </a>
             <a href="#expertise" className="transition-colors hover:text-foreground">
               Expertise
             </a>
@@ -161,6 +175,7 @@ function Index() {
             aria-label="Mobile navigation"
           >
             {[
+              ["Who we help", "#fit"],
               ["Expertise", "#expertise"],
               ["How we work", "#engagement"],
               ["Public work", "#work"],
@@ -202,8 +217,8 @@ function Index() {
             </p>
             <div className="mt-8 flex animate-rise flex-col gap-3 sm:flex-row [animation-delay:240ms]">
               <Button asChild>
-                <a href="#expertise">
-                  Explore expertise <ArrowRight className="size-4" />
+                <a href="#contact">
+                  Discuss your system <ArrowRight className="size-4" />
                 </a>
               </Button>
               <Button asChild variant="outline">
@@ -233,9 +248,9 @@ function Index() {
         <div className="mt-3 grid grid-cols-2 gap-px overflow-hidden rounded-lg border border-border bg-border lg:grid-cols-4">
           {[
             ["25+", "Years in software"],
-            ["9", "Years as Finular CTO"],
             ["800K+", "Finular registered users"],
             ["99.99%", "Finular platform uptime"],
+            ["130M+", "Open-source downloads"],
           ].map(([value, label]) => (
             <div key={label} className="bg-surface p-5 sm:p-6">
               <p className="text-2xl font-extrabold sm:text-3xl">{value}</p>
@@ -245,13 +260,69 @@ function Index() {
         </div>
       </section>
 
+      <section id="fit" className="border-b border-border py-20">
+        <div className="mx-auto max-w-7xl px-5 sm:px-8">
+          <div className="max-w-3xl">
+            <p className="font-mono text-xs uppercase text-primary">01 / Who we help</p>
+            <h2 className="mt-4 text-3xl font-extrabold sm:text-5xl">
+              You are probably in the right place if…
+            </h2>
+          </div>
+          <div className="mt-10 grid gap-10 lg:grid-cols-12">
+            <ul className="grid gap-3 lg:col-span-7">
+              {fit.map((line) => (
+                <li key={line} className="flex gap-3 leading-7">
+                  <ArrowRight className="mt-1.5 size-4 shrink-0 text-primary" aria-hidden="true" />
+                  <span>{line}</span>
+                </li>
+              ))}
+            </ul>
+            <div className="rounded-lg border border-border bg-surface p-6 lg:col-span-5 sm:p-7">
+              <p className="font-mono text-[10px] uppercase text-muted-foreground">
+                Probably not a fit if you need
+              </p>
+              <ul className="mt-4 grid gap-2 text-sm leading-6 text-muted-foreground">
+                {notFit.map((line) => (
+                  <li key={line} className="flex gap-3">
+                    <span
+                      className="mt-2.5 size-1.5 shrink-0 rounded-full bg-border"
+                      aria-hidden="true"
+                    />
+                    <span>{line}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-5 text-sm font-semibold leading-6 text-foreground">{fitSummary}</p>
+            </div>
+          </div>
+          <div className="mt-16 max-w-3xl">
+            <p className="font-mono text-xs uppercase text-primary">Why Hietanen</p>
+            <h3 className="mt-4 text-2xl font-extrabold sm:text-3xl">
+              Not an agency. Not a slide-deck consultancy.
+            </h3>
+            <p className="mt-4 leading-7 text-muted-foreground">
+              Three things that are normally bought separately, from the same people.
+            </p>
+          </div>
+          <div className="mt-8 grid gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-3">
+            {why.map((reason, index) => (
+              <article key={reason.title} className="bg-surface p-6 sm:p-7">
+                <span className="font-mono text-xs text-primary">0{index + 1}</span>
+                <h4 className="mt-4 text-lg font-bold">{reason.title}</h4>
+                <p className="mt-3 text-sm leading-6 text-muted-foreground">{reason.copy}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section
         id="expertise"
         className="border-y border-border bg-foreground py-20 text-background"
       >
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <div className="max-w-3xl">
-            <p className="font-mono text-xs uppercase text-signal">01 / Expertise</p>
+            <p className="font-mono text-xs uppercase text-signal">02 / Expertise</p>
             <h2 className="mt-4 text-3xl font-extrabold sm:text-5xl">
               Strategy that reaches production.
             </h2>
@@ -285,7 +356,7 @@ function Index() {
       <section id="engagement" className="border-b border-border py-20">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <div className="max-w-3xl">
-            <p className="font-mono text-xs uppercase text-primary">02 / How we work</p>
+            <p className="font-mono text-xs uppercase text-primary">03 / How we work</p>
             <h2 className="mt-4 text-3xl font-extrabold sm:text-5xl">
               Senior engineer(s), embedded where the work is.
             </h2>
@@ -295,7 +366,32 @@ function Index() {
               is what that engineer brings along.
             </p>
           </div>
-          <div className="mt-12 grid gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-10 overflow-hidden rounded-lg border border-border">
+            <table className="w-full text-left text-sm">
+              <caption className="sr-only">Which engagement fits which situation</caption>
+              <thead className="bg-surface-strong/60 font-mono text-[10px] uppercase text-muted-foreground">
+                <tr>
+                  <th scope="col" className="px-5 py-3 font-medium">
+                    Your situation
+                  </th>
+                  <th scope="col" className="px-5 py-3 font-medium">
+                    Engagement
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {engagementGuide.map(([situation, engagement]) => (
+                  <tr key={situation} className="border-t border-border">
+                    <td className="px-5 py-3 leading-6">“{situation}”</td>
+                    <td className="px-5 py-3 font-semibold leading-6 text-foreground">
+                      {engagement}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <div className="mt-10 grid gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
             {engagements.map((item) => (
               <article key={item.title} className="flex flex-col bg-surface p-6 sm:p-7">
                 <p className="font-mono text-[10px] uppercase text-primary">{item.model}</p>
@@ -314,10 +410,25 @@ function Index() {
               </article>
             ))}
           </div>
+          <div className="mt-14">
+            <p className="font-mono text-xs uppercase text-primary">What happens next</p>
+            <h3 className="mt-4 text-2xl font-extrabold sm:text-3xl">
+              From first conversation to handover.
+            </h3>
+            <ol className="mt-8 grid gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-2 lg:grid-cols-5">
+              {engagementProcess.map((step, index) => (
+                <li key={step.title} className="bg-surface p-5 sm:p-6">
+                  <span className="font-mono text-xs text-primary">0{index + 1}</span>
+                  <h4 className="mt-3 font-bold">{step.title}</h4>
+                  <p className="mt-2 text-sm leading-6 text-muted-foreground">{step.copy}</p>
+                </li>
+              ))}
+            </ol>
+          </div>
           <p className="mt-8 max-w-3xl leading-7 text-muted-foreground">
-            UK limited company (no. {company.companyNumber}), London-based, working with clients
-            internationally, with a delivery track record in the UK, the US and the EU.{" "}
-            {company.terms}
+            UK limited company (no. {company.companyNumber}) based in London {company.postcodeArea},
+            working with clients internationally, with a delivery track record in the UK, the US and
+            the EU. {company.onSite} {company.terms}
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Button asChild>
@@ -334,7 +445,7 @@ function Index() {
 
       <section id="work" className="mx-auto max-w-7xl px-5 py-20 sm:px-8">
         <div className="lg:col-span-4">
-          <p className="font-mono text-xs uppercase text-primary">03 / Public work</p>
+          <p className="font-mono text-xs uppercase text-primary">04 / Public work</p>
           <h2 className="mt-4 text-3xl font-extrabold sm:text-4xl">
             Open source we maintain, running in production.
           </h2>
@@ -454,7 +565,7 @@ function Index() {
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <div className="grid gap-10 lg:grid-cols-12">
             <div className="lg:col-span-4">
-              <p className="font-mono text-xs uppercase text-primary">04 / Blueprints</p>
+              <p className="font-mono text-xs uppercase text-primary">05 / Blueprints</p>
               <h2 className="mt-4 text-3xl font-extrabold sm:text-4xl">
                 Start from a working template.
               </h2>
@@ -564,7 +675,7 @@ function Index() {
       <section id="references" className="py-20">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <div className="max-w-3xl">
-            <p className="font-mono text-xs uppercase text-primary">05 / Reference projects</p>
+            <p className="font-mono text-xs uppercase text-primary">06 / Reference projects</p>
             <h2 className="mt-4 text-3xl font-extrabold sm:text-4xl">
               Solutions we have helped to build.
             </h2>
@@ -678,7 +789,7 @@ function Index() {
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <div className="grid gap-10 lg:grid-cols-12">
             <div className="lg:col-span-4">
-              <p className="font-mono text-xs uppercase text-primary">06 / Customers</p>
+              <p className="font-mono text-xs uppercase text-primary">07 / Customers</p>
               <h2 className="mt-4 text-3xl font-extrabold sm:text-4xl">
                 Trusted where the stakes are high.
               </h2>
@@ -747,7 +858,7 @@ function Index() {
 
       <section id="experience" className="py-20">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
-          <p className="font-mono text-xs uppercase text-primary">07 / Founder</p>
+          <p className="font-mono text-xs uppercase text-primary">08 / Founder</p>
           <div className="mt-4 grid gap-8 lg:grid-cols-12 lg:items-center">
             <div className="lg:col-span-8">
               <h2 className="text-3xl font-extrabold sm:text-4xl">Led by Tuomas Hietanen.</h2>
@@ -835,14 +946,57 @@ function Index() {
         <div className="relative overflow-hidden rounded-lg border border-border bg-surface p-7 sm:p-12">
           <div className="absolute -right-24 -top-24 size-72 rounded-full bg-primary/15 blur-3xl" />
           <div className="relative max-w-3xl">
-            <p className="font-mono text-xs uppercase text-primary">08 / Contact</p>
+            <p className="font-mono text-xs uppercase text-primary">09 / Contact</p>
             <h2 className="mt-4 text-3xl font-extrabold sm:text-5xl">
               Bring the difficult system problem.
             </h2>
             <p className="mt-5 max-w-2xl leading-7 text-muted-foreground">
-              For technology leadership, architecture reviews or hands-on engineering in fintech, AI
-              and cloud platforms, get in touch directly.
+              Tell us what you are dealing with, and we will say plainly whether we can help. Three
+              ways in, depending on how far along you are.
             </p>
+            <div className="mt-8 grid gap-3 sm:grid-cols-3">
+              {[
+                {
+                  label: "Discuss your system",
+                  copy: "A conversation about the problem you are facing, for as long as it needs.",
+                  href: `mailto:${company.email}?subject=${encodeURIComponent("Discuss our system")}`,
+                  primary: true,
+                },
+                {
+                  label: "Request an assessment",
+                  copy: "You already know there is a problem and want a written view of it.",
+                  href: `mailto:${company.email}?subject=${encodeURIComponent("Technical assessment")}`,
+                  primary: false,
+                },
+                {
+                  label: "See the work first",
+                  copy: "Reference projects, open source and blueprints, for when you are still researching.",
+                  href: "#references",
+                  primary: false,
+                },
+              ].map((option) => (
+                <a
+                  key={option.label}
+                  href={option.href}
+                  className={`group flex flex-col rounded-lg border p-5 transition-colors ${
+                    option.primary
+                      ? "border-primary bg-primary text-primary-foreground hover:bg-primary/90"
+                      : "border-border bg-background hover:border-primary/50"
+                  }`}
+                >
+                  <span className="inline-flex items-center gap-2 font-bold">
+                    {option.label}
+                    <ArrowRight className="size-4" aria-hidden="true" />
+                  </span>
+                  <span
+                    className={`mt-2 text-sm leading-6 ${option.primary ? "text-primary-foreground/80" : "text-muted-foreground"}`}
+                  >
+                    {option.copy}
+                  </span>
+                </a>
+              ))}
+            </div>
+
             <a
               href={`mailto:${company.email}`}
               className="group mt-8 flex max-w-xl items-center gap-5 rounded-lg border border-border bg-background p-4 transition-colors hover:border-primary/50 sm:p-5"
@@ -852,7 +1006,7 @@ function Index() {
               </span>
               <span className="min-w-0">
                 <span className="block font-mono text-[10px] uppercase text-primary">
-                  Contact here
+                  Or email directly
                 </span>
                 <span className="mt-1 block text-lg font-bold">Tuomas Hietanen</span>
                 <span className="block text-sm text-muted-foreground">
@@ -897,9 +1051,37 @@ function Index() {
       </section>
 
       <footer className="border-t border-border">
-        <div className="mx-auto grid max-w-7xl gap-3 px-5 py-8 text-xs text-muted-foreground sm:grid-cols-[minmax(0,1fr)_auto] sm:px-8">
-          <p className="font-bold text-foreground">Hietanen Consultancy Ltd</p>
-          <p>London · Working internationally · Company no. {company.companyNumber} · © 2026</p>
+        <div className="mx-auto grid max-w-7xl gap-6 px-5 py-10 text-xs text-muted-foreground sm:grid-cols-[minmax(0,1fr)_auto] sm:px-8">
+          <div className="grid gap-2">
+            <p className="font-bold text-foreground">{company.legalName}</p>
+            <p>
+              Registered in England and Wales, company no. {company.companyNumber} · based in London{" "}
+              {company.postcodeArea}, working internationally
+            </p>
+            <p>This site sets no cookies and runs no analytics.</p>
+          </div>
+          <div className="grid gap-2 sm:text-right">
+            <a href={`mailto:${company.email}`} className="transition-colors hover:text-foreground">
+              {company.email}
+            </a>
+            <a
+              href={company.founder.linkedIn}
+              target="_blank"
+              rel="noreferrer"
+              className="transition-colors hover:text-foreground"
+            >
+              LinkedIn
+            </a>
+            <a
+              href={company.github}
+              target="_blank"
+              rel="noreferrer"
+              className="transition-colors hover:text-foreground"
+            >
+              GitHub
+            </a>
+            <p>© 2026</p>
+          </div>
         </div>
       </footer>
     </main>

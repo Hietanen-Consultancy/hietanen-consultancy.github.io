@@ -10,6 +10,14 @@ export const company = {
   /** Companies House registration. */
   companyNumber: "16823314",
   city: "London",
+  /**
+   * Where the consultants sit. The Companies House registered office is the
+   * accountant's address, so the site publishes this area instead.
+   */
+  postcodeArea: "SW1V",
+  /** Why the location matters to a buyer: on-site days anywhere in central London are easy. */
+  onSite:
+    "From SW1V, any office in Central London or the City of London is a short journey, so on-site days are easy to arrange.",
   country: "GB",
   founded: 2025,
   founder: {
@@ -59,6 +67,13 @@ export const company = {
     "Direct contracts and agency framework agreements, inside or outside IR35 as the engagement requires. NDA first; rates on request.",
 } as const;
 
+/** One of the three things a buyer normally has to buy separately. */
+export type Reason = { title: string; copy: string };
+/** [the buyer's situation, the engagement that fits it] */
+export type EngagementGuideRow = readonly [string, string];
+/** One step from first conversation to handover. */
+export type ProcessStep = { title: string; copy: string };
+
 export type Service = { number: string; title: string; copy: string; tags: readonly string[] };
 export type Engagement = { title: string; model: string; copy: string; tags: readonly string[] };
 /** [years, role, what it involved] */
@@ -88,6 +103,83 @@ export const services: readonly Service[] = [
     title: "Cloud & functional .NET",
     copy: "High-integrity .NET platforms using C#, F#, Azure, AWS, event-driven architecture and infrastructure as code.",
     tags: ["F# / C#", "Azure / AWS", "Architecture"],
+  },
+];
+
+// Who the site is for, stated so a visitor can self-qualify in a few seconds.
+export const fit: readonly string[] = [
+  "You run a fintech or another regulated business, and a system you depend on has become hard to change.",
+  "You need a senior engineer or architect who ships the code, not only the recommendations.",
+  "Your CTO needs more senior technical capacity without another permanent executive.",
+  "You are moving a critical .NET platform onto modern cloud architecture.",
+  "You are integrating payments, banking, KYC, credit, FX or regulatory reporting.",
+  "You are putting AI, language models or agents into production and want someone who has run them there.",
+  "You are investing in or acquiring a company and need an independent technical view of it.",
+];
+
+// Said plainly, because it saves both sides a conversation.
+export const notFit: readonly string[] = [
+  "a large offshore delivery team",
+  "a commodity website or app build",
+  "the lowest day rate",
+  "a project run entirely through requirements hand-off, with nobody on your side to talk to",
+];
+export const fitSummary =
+  "We fit best when the system is technically difficult, commercially important, or both.";
+
+// Why this consultancy and not an agency, a contractor or a slide-deck consultancy:
+// three things that are normally bought separately, from the same people.
+export const why: readonly Reason[] = [
+  {
+    title: "Technical leadership",
+    copy: "Architecture, technical strategy and the decisions a board has to sign off, from someone who has carried that responsibility (FCA SMF3) in a regulated lender.",
+  },
+  {
+    title: "Senior engineering",
+    copy: "The person advising you can build it. Most of our hours are spent in the code, and the open-source libraries we maintain have been downloaded over 130 million times.",
+  },
+  {
+    title: "Production responsibility",
+    copy: "Nine years of running regulated platforms after launch: incidents, audits, uptime, regulators and integrations with dozens of counterparties. The advice is shaped by that.",
+  },
+];
+
+// Which engagement fits which situation; the table in front of the engagement cards.
+export const engagementGuide: readonly EngagementGuideRow[] = [
+  ["We need another senior engineer, now.", "Embedded engineer(s), on a day rate"],
+  ["Our CTO needs senior technical support, or we have no CTO yet.", "Fractional CTO, on retainer"],
+  ["We have a defined architecture or integration problem to solve.", "Fixed-scope delivery"],
+  [
+    "We are acquiring or investing in this company and need to understand its technology.",
+    "Technical due diligence, fixed scope",
+  ],
+  [
+    "We have an old system and do not know how to modernise it.",
+    "Architecture assessment, fixed scope, then whichever model the findings call for",
+  ],
+];
+
+// From first conversation to handover, so nobody has to guess what buying this is like.
+export const engagementProcess: readonly ProcessStep[] = [
+  {
+    title: "A conversation",
+    copy: "On the system, the problem and the constraints, for as long as it takes to understand them. Nothing to prepare on your side.",
+  },
+  {
+    title: "Technical discovery",
+    copy: "Under NDA, we look at the architecture, code, infrastructure or requirements, as far as the question needs.",
+  },
+  {
+    title: "A written recommendation",
+    copy: "What we would do and in what order, with a scope and an engagement model you can take to your board.",
+  },
+  {
+    title: "Delivery",
+    copy: "The senior engineer or squad joins the work, on-site or remote, billed as agreed.",
+  },
+  {
+    title: "Handover",
+    copy: "Your team owns the system and the knowledge. Documentation and runbooks are part of the scope, not an extra.",
   },
 ];
 
