@@ -9,6 +9,7 @@
  "order": [
   "cover",
   "problem",
+  "idea",
   "product",
   "pipeline",
   "today",
@@ -62,7 +63,8 @@
  "assets": {
   "seal.svg": "9808e285bbdd6b05f09f5fdaecc74d2b",
   "fuuga-logo.png": "3863cf71054a6bcdb76c923d3531a665",
-  "tuomas-hietanen.png": "316cb9d770d37d4f31113caafd3032e2"
+  "tuomas-hietanen.png": "316cb9d770d37d4f31113caafd3032e2",
+  "fuuga-retrain.svg": "d290e18f47b744fcb84c2191c169b83a"
  },
  "variants": {
   "customer": {
@@ -75,11 +77,13 @@
    "assets": {
     "seal.svg": "e080fda658171d576bd52533c972caec",
     "fuuga-logo.png": "6953766c1dc1aabd0d245b147c3b17f2",
-    "tuomas-hietanen.png": "8e7c1deccc4100117d0e4324751324ba"
+    "tuomas-hietanen.png": "8e7c1deccc4100117d0e4324751324ba",
+    "fuuga-retrain.svg": "f49c109ed50190a152566e99759a3620"
    },
    "order": [
     "cover",
     "problem",
+    "idea",
     "product",
     "pipeline",
     "today",

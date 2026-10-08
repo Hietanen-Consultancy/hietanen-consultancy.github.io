@@ -75,6 +75,30 @@ const problems = [
   ],
 ] as const;
 
+// The idea in one picture (drawn by scripts/fuuga-figures.ts). An illustration,
+// not a measurement: each pilot measures the curves on the customer's own tasks.
+const ideaFigure = {
+  src: "/fuuga/retrain.svg",
+  title: "Ahead where your business is",
+  caption:
+    "Retrained on your own work and grounded in all your documents, searched in-house, an open model rises above the hosted model across your domain. A hosted model handed your documents narrows the gap, but only for documents that may leave your network; classified and confidential ones may not. Fine-tuning costs a little general ability just outside the domain; we keep it small and measure it against the base model before release.",
+};
+
+const ideaPoints = [
+  [
+    "Skills and facts",
+    "Retraining teaches how your business works: your code conventions, message formats and decisions. Facts that change every week, such as fee tables and contracts, are looked up in your own documents at the moment of the question, in-house, including the ones that may never leave.",
+  ],
+  [
+    "Measured both ways",
+    "Every pilot measures the gain and the loss on your own held-out tasks, before and after retraining, so you know what improved and what did not.",
+  ],
+  [
+    "More than accuracy",
+    "Even where the curves are level, an in-house model keeps customer data and classified documents inside your network, costs the same at any volume, runs offline, and cannot be changed or retired by a vendor.",
+  ],
+] as const;
+
 const decisionCase = [
   [
     "The data you have",
@@ -254,6 +278,43 @@ function FuugaPage() {
               ))}
             </div>
           </div>
+        </section>
+
+        <section className="mx-auto max-w-5xl px-5 py-16 sm:px-8">
+          <h2 className="text-3xl font-bold sm:text-4xl">
+            <span className="text-[#a78bfa]">&gt;</span> the-idea
+          </h2>
+          <p className="mt-4 max-w-2xl text-sm leading-6 text-[#a9a3c9]">
+            An open model already knows most of what a hosted model knows. Retrained on your own
+            work, it goes further than the hosted model in the domain that matters to you.
+          </p>
+          <figure className="mt-8 grid overflow-hidden rounded-lg border border-[#2b2552] bg-[#0c0a1c] md:grid-cols-5">
+            <img
+              src={ideaFigure.src}
+              alt={ideaFigure.title}
+              width={480}
+              height={320}
+              loading="lazy"
+              className="w-full md:col-span-3"
+            />
+            <figcaption className="border-t border-[#2b2552] p-6 md:col-span-2 md:border-l md:border-t-0">
+              <span className="block font-bold text-[#f1eefc]">{ideaFigure.title}</span>
+              <span className="mt-3 block text-sm leading-6 text-[#a9a3c9]">
+                {ideaFigure.caption}
+              </span>
+            </figcaption>
+          </figure>
+          <div className="mt-6 grid gap-px overflow-hidden rounded-lg border border-[#2b2552] bg-[#2b2552] sm:grid-cols-3">
+            {ideaPoints.map(([title, copy]) => (
+              <article key={title} className="bg-[#100d24] p-6">
+                <h3 className="font-bold text-[#f1eefc]">{title}</h3>
+                <p className="mt-3 text-sm leading-6 text-[#a9a3c9]">{copy}</p>
+              </article>
+            ))}
+          </div>
+          <p className="mt-4 text-xs text-[#6b6491]">
+            An illustration, not a benchmark: each pilot measures the curves on your own tasks.
+          </p>
         </section>
 
         <section className="mx-auto max-w-5xl px-5 py-16 sm:px-8">
