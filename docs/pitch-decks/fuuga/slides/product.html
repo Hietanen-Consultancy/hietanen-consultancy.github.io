@@ -5,7 +5,7 @@
     <div style="flex:1; display:flex; flex-direction:column; gap:32px">
       <p style="font-size:32px; line-height:1.4; color:#ddd6f3">The complete toolchain to make a language model, or retrain an existing one — on .NET, the platform banks and insurers already run.</p>
       <ul style="font-size:30px; line-height:1.5; color:#a9a3c9; padding:0 0 0 32px">
-        <li>Starts from the best open models and teaches them your data</li>
+        <li>Starts from open models you know — Llama, Qwen, Gemma, Mistral, Phi, DeepSeek, Kimi — and teaches them your data</li>
         <li>Runs on ordinary GPUs or CPU servers you already own</li>
         <li>Speaks the OpenAI and Anthropic interfaces; nothing is rewritten</li>
       </ul>
@@ -15,10 +15,10 @@
       <p style="font-family:'JetBrains Mono', 'Courier New', monospace; font-size:26px; line-height:1.7; color:#f1eefc; padding:26px"><span style="color:#a78bfa">&gt;</span> fuuga scaffold finetune<br><span style="color:#a78bfa">&gt;</span> fuuga transfer --recipe my.json<br><span style="color:#a78bfa">&gt;</span> fuuga sft --recipe my.json<br><span style="color:#a78bfa">&gt;</span> fuuga eval --recipe my.json<br><span style="color:#a78bfa">&gt;</span> fuuga export gguf --tokenizer tok/<br><span style="color:#a78bfa">&gt;</span> fuuga-serve --checkpoint best/</p>
     </div>
   </div>
-  <p style="position:absolute; left:128px; bottom:64px; width:1664px; font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; color:#a9a3c9">Hietanen Consultancy · Fuuga · 03 · Technical detail: F# on .NET with TorchSharp; NuGet: Fuuga, Fuuga.cpu, Fuuga.Image</p>
+  <p style="position:absolute; left:128px; bottom:64px; width:1664px; font-family:'JetBrains Mono', 'Courier New', monospace; font-size:24px; color:#a9a3c9">Hietanen Consultancy · Fuuga · 03 · Under the hood: F# and TorchSharp · NuGet: Fuuga, Fuuga.cpu, Fuuga.Image</p>
   <aside>Detail
 — One toolchain covers the whole life of a model: preparing data, training, fine-tuning, shrinking, testing and running it. There is no separate research stack, no second team and no hand-over problem.
-— It installs like any other business software component, on the company's own servers or cloud, and starts from the best open models: Llama, Phi, Qwen, Mistral, Gemma and DeepSeek.
+— It installs like any other business software component, on the company's own servers or cloud, and starts from open models: Llama 3, Qwen 2 and 3, Gemma 3 and 4, Mistral, Phi-3 and Phi-4, DeepSeek-V3 and Kimi K2, with GLM and Kimi K3 experimental. Any of them can be read straight from a GGUF file, and ModernBERT is the starting point for typed decisions.
 — Applications already built on OpenAI or Anthropic connect without being rewritten, and the finished weights export to the standard formats, so nothing is trapped here.
 — .NET is the platform these companies' core systems already run on, staffed by engineers they already employ. "No Python" means no second, incompatible toolchain owned by a specialist.
 — The terminal panel is the shortest path for a technical reader who wants to check the repository.</aside>

@@ -34,7 +34,7 @@
 
 Detail
 — Ingest: documents, Parquet and text become a hashed corpus, and every checkpoint records which sources trained it.
-— Transfer: donor weights from nine model families, mapped architecture-aware, or a small model pre-trained from scratch.
+— Transfer: donor weights from nine model families — Llama, Qwen, Gemma, Mistral, Phi, DeepSeek (with Kimi K2), GLM and Kimi K3 (both experimental), and ModernBERT for typed decisions — mapped architecture-aware, also from GGUF files, or a small model pre-trained from scratch.
 — Fine-tune: LoRA and QLoRA on consumer GPUs, DPO for preferences, GRPO reinforcement learning with verifiable rewards.
 — Compress: distil, merge, prune and quantise to a bit budget; export GGUF for llama.cpp and Ollama, or ONNX.
 — Serve: OpenAI- and Anthropic-compatible APIs with continuous batching, guardrails, tool calling, MCP and A2A.
