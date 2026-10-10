@@ -160,8 +160,11 @@ const airBridgeMap = {
 // examples/Drones/SwarmChoreography, its show.svg copied here.
 const lightShow = {
   src: "/drones/swarm-light-show.svg",
+  // The same run's trajectories: every drone's timed keyframes, the GUIDED-mode show
+  // controller that flies them (ArduPilot SITL or real links) and the SITL start script.
+  zip: "/drones/swarm-light-show-trajectories.zip",
   caption:
-    "A hundred drones: a globe whose lands turn a full turn in 24 steps while the drones hold (a change of lights only), then a diamond, a cube and a star with its inner lights off. Every flight between formations was solved in blocks of four drones on 16-qubit circuits and passed the same in-flight separation gate as the four-drone show.",
+    "A hundred drones on a 2.5 m launch grid, 3 m apart in the air and under 120 m: a globe whose lands turn a full turn in 24 steps while the drones hold (a change of lights only), then a diamond, a star with its inner lights off, a turning mug, a doughnut and a cube turning a full turn, the turns flown as one continuous move. Every flight between formations was solved in blocks of four drones on 16-qubit circuits and passed the same in-flight separation gate as the four-drone show. The zip holds every drone's timed keyframes, the show controller that flies them in GUIDED mode on ArduPilot, in its simulator or on real links, and the script that starts one simulator per drone.",
 } as const;
 
 const layers = [
@@ -392,7 +395,9 @@ function QuantumPage() {
               same laptop simulator, until no block moves and every drone keeps its safety distance
               in flight. No classical solver stands in for the quantum one; the runs grow with the
               swarm, not with its square. The picture is the show as planned: every drone in the
-              colour its light is set to.
+              colour its light is set to. Any show works the same way: hand the software the
+              pictures, as points with the colour each light should show, and it plans every flight
+              between them, checks the separation in flight and writes the plan each drone flies.
             </p>
             <figure className="mt-4 flex flex-col">
               <a
@@ -415,6 +420,17 @@ function QuantumPage() {
                 <span className="font-bold text-[#e0f2fe]">Swarm choreography at scale.</span>{" "}
                 {lightShow.caption}
               </figcaption>
+              <div className="mt-4">
+                <Button
+                  asChild
+                  variant="outline"
+                  className="border-[#38bdf8]/50 bg-transparent text-[#f0f9ff] hover:bg-[#0b2a4d] hover:text-[#f0f9ff]"
+                >
+                  <a href={lightShow.zip} download>
+                    Download the flight plan (zip) <Download className="size-4" />
+                  </a>
+                </Button>
+              </div>
             </figure>
             <div className="mt-8 rounded-2xl border border-[#38bdf8]/40 bg-[#061a33]/60 p-6">
               <p className="font-mono text-[10px] uppercase tracking-widest text-[#7dd3fc]">
