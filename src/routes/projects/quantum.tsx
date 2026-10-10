@@ -420,18 +420,18 @@ function QuantumPage() {
                 <span className="font-bold text-[#e0f2fe]">Swarm choreography at scale.</span>{" "}
                 {lightShow.caption}
               </figcaption>
-              <div className="mt-4">
-                <Button
-                  asChild
-                  variant="outline"
-                  className="border-[#38bdf8]/50 bg-transparent text-[#f0f9ff] hover:bg-[#0b2a4d] hover:text-[#f0f9ff]"
-                >
-                  <a href={lightShow.zip} download>
-                    Download the flight plan (zip) <Download className="size-4" />
-                  </a>
-                </Button>
-              </div>
             </figure>
+            <div className="mt-4">
+              <Button
+                asChild
+                variant="outline"
+                className="border-[#38bdf8]/50 bg-transparent text-[#f0f9ff] hover:bg-[#0b2a4d] hover:text-[#f0f9ff]"
+              >
+                <a href={lightShow.zip} download>
+                  Download the flight plan (zip) <Download className="size-4" />
+                </a>
+              </Button>
+            </div>
             <div className="mt-8 rounded-2xl border border-[#38bdf8]/40 bg-[#061a33]/60 p-6">
               <p className="font-mono text-[10px] uppercase tracking-widest text-[#7dd3fc]">
                 Where the hardware is
