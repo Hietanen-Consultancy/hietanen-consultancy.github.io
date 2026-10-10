@@ -147,6 +147,23 @@ const droneFlights = [
   ],
 ] as const;
 
+// The wildfire air bridge planner on a map: the FireAirBridge example run with
+// `--fire`, `--water` and `--map` over the Oakland hills (the README's command),
+// its map.svg copied here. Opened on its own it zooms and pans.
+const airBridgeMap = {
+  src: "/drones/fire-air-bridge-map.svg",
+  caption:
+    "The wildfire air bridge planner's choice each round, above the Oakland hills: dotted corridors are the candidates, one qubit each, ten per round from three water points to eight burning sectors under two ground crews and four drop coordinators; solid corridors are the plan, with the drones flowing along them; red is the fire's intensity. The footer gives each round's qubits, how many plans they span (2^10 for ten), the quantum circuits run to search them, and three scores: the plan the Quantum Approximate Optimisation Algorithm (QAOA) found, the exact oracle's, and the classical greedy planner's. Open it to zoom.",
+} as const;
+
+// The choreography example's scale run: `dotnet run -- --drones 100 --lights` in
+// examples/Drones/SwarmChoreography, its show.svg copied here.
+const lightShow = {
+  src: "/drones/swarm-light-show.svg",
+  caption:
+    "A hundred drones: a globe whose lands turn a full turn in 24 steps while the drones hold (a change of lights only), then a diamond, a cube and a star with its inner lights off. Every flight between formations was solved in blocks of four drones on 16-qubit circuits and passed the same in-flight separation gate as the four-drone show.",
+} as const;
+
 const layers = [
   [
     "Layer 1 · Builders",
@@ -265,6 +282,28 @@ function QuantumPage() {
               </article>
             ))}
           </div>
+          <figure className="mt-8 flex flex-col">
+            <a
+              href={airBridgeMap.src}
+              target="_blank"
+              rel="noreferrer"
+              className="block overflow-hidden rounded-2xl border border-[#bcd6ee] bg-white/70 p-2 shadow-[0_20px_60px_-20px_rgba(2,132,199,0.35)] backdrop-blur transition-colors hover:border-[#0284c7]/60"
+            >
+              <img
+                src={airBridgeMap.src}
+                alt="The wildfire air bridge planner on a map of the Oakland hills: candidate corridors dotted, the chosen corridors solid with drones flowing, the fire sectors red"
+                loading="lazy"
+                decoding="async"
+                width={1000}
+                height={710}
+                className="w-full rounded-xl"
+              />
+            </a>
+            <figcaption className="mt-3 text-sm leading-6 text-[#3b5f85]">
+              <span className="font-bold text-[#0b2a4d]">The choice, drawn.</span>{" "}
+              {airBridgeMap.caption}
+            </figcaption>
+          </figure>
         </section>
 
         <section className="border-y border-[#bcd6ee] bg-[#0b2a4d] py-16 text-[#e0f2fe]">
@@ -312,7 +351,7 @@ function QuantumPage() {
             <p className="mt-12 font-mono text-[10px] uppercase tracking-widest text-[#7dd3fc]">
               Flown in ArduPilot's own simulator (SITL) · ArduPilot 4.7.1 · 29 September 2026
             </p>
-            <p className="mt-3 max-w-2xl text-sm leading-6 text-[#bae6fd]">
+            <p className="mt-3 text-sm leading-6 text-[#bae6fd]">
               Every example exports ArduPilot missions, and one shared launcher flies them. These
               flights ran in ArduPilot's software-in-the-loop simulator: the real autopilot firmware
               on a simulated airframe. Each picture shows the flight in 3-D, with the whole flight
@@ -343,15 +382,50 @@ function QuantumPage() {
                 </figure>
               ))}
             </div>
+            <p className="mt-12 font-mono text-[10px] uppercase tracking-widest text-[#7dd3fc]">
+              A hundred drones on sixteen qubits · the laptop simulator · 9 October 2026
+            </p>
+            <p className="mt-3 text-sm leading-6 text-[#bae6fd]">
+              A swarm's formation change is an assignment of every drone to a slot, n² qubits as one
+              circuit. A hundred drones would need 10,000. The choreography example instead improves
+              the assignment in blocks of four drones, each block a 16-qubit QAOA circuit on the
+              same laptop simulator, until no block moves and every drone keeps its safety distance
+              in flight. No classical solver stands in for the quantum one; the runs grow with the
+              swarm, not with its square. The picture is the show as planned: every drone in the
+              colour its light is set to.
+            </p>
+            <figure className="mt-4 flex flex-col">
+              <a
+                href={lightShow.src}
+                target="_blank"
+                rel="noreferrer"
+                className="block overflow-hidden rounded-2xl border border-white/10 bg-[#0b0f1a] transition-colors hover:border-[#38bdf8]/60"
+              >
+                <img
+                  src={lightShow.src}
+                  alt="A hundred drones flying a light show: a turning globe, a diamond, a cube and a star, each drone drawn in the colour of its light"
+                  loading="lazy"
+                  decoding="async"
+                  width={1000}
+                  height={560}
+                  className="w-full"
+                />
+              </a>
+              <figcaption className="mt-3 text-sm leading-6 text-[#bae6fd]">
+                <span className="font-bold text-[#e0f2fe]">Swarm choreography at scale.</span>{" "}
+                {lightShow.caption}
+              </figcaption>
+            </figure>
             <div className="mt-8 rounded-2xl border border-[#38bdf8]/40 bg-[#061a33]/60 p-6">
               <p className="font-mono text-[10px] uppercase tracking-widest text-[#7dd3fc]">
                 Where the hardware is
               </p>
               <p className="mt-3 text-sm leading-6 text-[#e0f2fe]">
                 The choreography example runs four drones on sixteen qubits on a laptop simulator,
-                with the quantum solver executing every transition. Larger fleets run today through
-                the hybrid path, with cloud QPU and annealer backends behind the same API. The code
-                does not change as the machines grow.
+                with the quantum solver executing every transition, and a hundred drones on the same
+                sixteen qubits a block at a time. A wider device takes wider blocks: 31 drones per
+                circuit at 1,000 qubits. Cloud QPU and annealer backends sit behind the same API,
+                and the code does not change as the machines grow.
               </p>
             </div>
           </div>
