@@ -1,0 +1,115 @@
+{
+ "v": 4,
+ "createdOnFiles": {
+  "v": 1,
+  "at": "2026-09-21T12:00:00Z"
+ },
+ "title": "Quantum Drone Investor Deck",
+ "cover": "cover",
+ "order": [
+  "cover",
+  "problem",
+  "product",
+  "architecture",
+  "drones",
+  "sell",
+  "whynow",
+  "market",
+  "model",
+  "gtm",
+  "competition",
+  "moat",
+  "traction",
+  "team",
+  "roadmap",
+  "funds",
+  "projections",
+  "assumptions",
+  "selfpath",
+  "ask"
+ ],
+ "sections": {
+  "s1": {
+   "description": "Why fleet coordination needs a developer-grade quantum library",
+   "start": "cover"
+  },
+  "s2": {
+   "description": "What FSharp.Azure.Quantum is and what flies today",
+   "start": "product"
+  },
+  "s3": {
+   "description": "What we sell, who buys it and the drone-first route",
+   "start": "sell"
+  },
+  "s4": {
+   "description": "Team, plan and the numbers",
+   "start": "traction"
+  }
+ },
+ "faces": {
+  "rubik": {
+   "family": "Rubik",
+   "href": "https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700&display=swap"
+  },
+  "fira-code": {
+   "family": "Fira Code",
+   "href": "https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&display=swap"
+  }
+ },
+ "designSystems": [],
+ "artifact": "https://claude.ai/artifact/FSXy1JgvTFTazCAjGp1uwF",
+ "assets": {
+  "seal.svg": "e1e416d870c6bfe6d49d1f8ee43fbb62",
+  "drone-swarm.jpg": "f0dd69289ec0eea728621e89aa69b9f2",
+  "tuomas-hietanen.png": "cb41bb85270fa0f08f78f45a27f38df7"
+ },
+ "variants": {
+  "customer": {
+   "title": "Quantum Fleet Planning Customer Briefing",
+   "createdOnFiles": {
+    "v": 1,
+    "at": "2026-09-29T12:00:00Z"
+   },
+   "artifact": "https://claude.ai/artifact/996fvhgKh2CeMD2PsvyQCM",
+   "assets": {
+    "drone-swarm.jpg": "18db8aca45bbecc6c77a32a91dbc2a2f",
+    "seal.svg": "7743e1e79187947928f17ec441fff826",
+    "tuomas-hietanen.png": "5a2a0833bd3150e2d868f4738c390418"
+   },
+   "order": [
+    "cover",
+    "problem",
+    "product",
+    "architecture",
+    "drones",
+    "whynow",
+    "competition",
+    "team",
+    "offer"
+   ],
+   "sections": {
+    "s1": {
+     "description": "Why fleet coordination needs a developer-grade optimiser",
+     "start": "cover"
+    },
+    "s2": {
+     "description": "What FSharp.Azure.Quantum is and what flies today",
+     "start": "product"
+    },
+    "s3": {
+     "description": "Why now, and how it compares",
+     "start": "whynow"
+    },
+    "s4": {
+     "description": "Who we are and how to start",
+     "start": "team"
+    }
+   },
+   "replace": {
+    "Investor briefing": "Customer briefing",
+    "Confidential · hietanen.co.uk": "hietanen.co.uk",
+    "\n\nStatus\n— A round would bring these hires forward.\n— A named quantum-hardware advisor is the one addition that would answer the credibility question in a line. Advisors: [quantum-hardware and aviation-regulation names to confirm].": ""
+   }
+  }
+ }
+}
